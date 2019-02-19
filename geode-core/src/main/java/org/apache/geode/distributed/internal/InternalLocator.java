@@ -950,7 +950,11 @@ public class InternalLocator extends Locator implements ConnectListener, LogConf
           Thread.sleep(5000);
         }
         logger.info("waiting for distributed system to reconnect...");
-        restarted = ds.waitUntilReconnected(-1, TimeUnit.SECONDS);
+        try {
+          restarted = ds.waitUntilReconnected(-1, TimeUnit.SECONDS);
+        } catch (CancelException e) {
+          // reconnect attempt failed
+        }
         if (restarted) {
           logger.info("system restarted");
         } else {
@@ -1047,7 +1051,12 @@ public class InternalLocator extends Locator implements ConnectListener, LogConf
           }
           this.stoppedForReconnect = false;
         }
-        restartWithDS(newSystem, GemFireCacheImpl.getInstance());
+        try {
+          restartWithDS(newSystem, GemFireCacheImpl.getInstance());
+        } catch (CancelException e) {
+          this.stoppedForReconnect = true;
+          return false;
+        }
         setLocator(this);
         restarted = true;
       }
@@ -1089,7 +1098,14 @@ public class InternalLocator extends Locator implements ConnectListener, LogConf
       this.myDs.setDependentLocator(this);
       logger.info("Locator restart: initializing TcpServer");
 
-      this.server.restarting(newSystem, newCache, this.configurationPersistenceService);
+      try {
+        this.server.restarting(newSystem, newCache, this.configurationPersistenceService);
+      } catch (CancelException e) {
+        this.myDs = null;
+        this.myCache = null;
+        logger.info("Locator restart: attempt to restart location services failed", e);
+        throw e;
+      }
       if (this.productUseLog.isClosed()) {
         this.productUseLog.reopen();
       }
@@ -1108,6 +1124,7 @@ public class InternalLocator extends Locator implements ConnectListener, LogConf
       endStartLocator(this.myDs);
       logger.info("Locator restart completed");
     }
+    this.server.restartCompleted(newSystem);
   }
 
   public ClusterManagementService getClusterManagementService() {
@@ -1256,6 +1273,15 @@ public class InternalLocator extends Locator implements ConnectListener, LogConf
       if (ds != null) {
         for (TcpHandler handler : this.allHandlers) {
           handler.restarting(ds, cache, sharedConfig);
+        }
+      }
+    }
+
+    @Override
+    public void restartCompleted(DistributedSystem ds) {
+      if (ds != null) {
+        for (TcpHandler handler : this.allHandlers) {
+          handler.restartCompleted(ds);
         }
       }
     }
