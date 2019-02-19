@@ -14,7 +14,6 @@
  */
 package org.apache.geode.internal.cache.tier.sockets.command;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.Region.Entry;
 import org.apache.geode.internal.cache.EntrySnapshot;
@@ -31,7 +30,6 @@ import org.apache.geode.internal.cache.tier.sockets.ServerConnection;
  */
 public class GetEntryCommand extends Request {
 
-  @Immutable
   private static final GetEntryCommand singleton = new GetEntryCommand();
 
   public static Command getCommand() {

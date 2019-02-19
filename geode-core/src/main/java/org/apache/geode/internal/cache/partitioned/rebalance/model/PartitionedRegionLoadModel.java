@@ -28,7 +28,6 @@ import java.util.TreeSet;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.partition.PartitionMemberInfo;
 import org.apache.geode.distributed.internal.membership.InternalDistributedMember;
 import org.apache.geode.internal.Assert;
@@ -73,7 +72,6 @@ public class PartitionedRegionLoadModel {
    * A comparator that is used to sort buckets in the order that we should satisfy redundancy - most
    * needy buckets first.
    */
-  @Immutable
   private static final Comparator<Bucket> REDUNDANCY_COMPARATOR = (o1, o2) -> {
     // put the buckets with the lowest redundancy first
     int result = o1.getRedundancy() - o2.getRedundancy();
@@ -97,7 +95,6 @@ public class PartitionedRegionLoadModel {
    * A member to represent inconsistent data. For example, if two members think they are the primary
    * for a bucket, we will set the primary to invalid, so it won't be a candidate for rebalancing.
    */
-  @Immutable
   public static final MemberRollup INVALID_MEMBER = new MemberRollup(null, null, false, false);
 
   private final BucketRollup[] buckets;

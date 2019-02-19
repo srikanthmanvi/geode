@@ -19,9 +19,6 @@ package org.apache.geode.cache;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeImmutable;
-
 
 /**
  * Enumerated type for region distribution scope.
@@ -32,7 +29,6 @@ import org.apache.geode.annotations.internal.MakeImmutable;
  * @see AttributesFactory#setScope
  * @since GemFire 3.0
  */
-@Immutable
 public class Scope implements Serializable {
   private static final long serialVersionUID = 5534399159504301602L;
 
@@ -40,21 +36,18 @@ public class Scope implements Serializable {
    * The region with this attribute is scoped to this JVM only. Operations and data are not
    * distributed to other caches.
    */
-  @Immutable
   public static final Scope LOCAL = new Scope("LOCAL");
 
   /**
    * The region or cached object with this attribute is scoped to the distributed cached system; any
    * distributed operation will return without waiting for the remote acknowledgment.
    */
-  @Immutable
   public static final Scope DISTRIBUTED_NO_ACK = new Scope("DISTRIBUTED_NO_ACK");
 
   /**
    * The region or cached object with this attribute is scoped to the distributed cached system; any
    * distributed operation will not return until all the remote acknowledgments come back.
    */
-  @Immutable
   public static final Scope DISTRIBUTED_ACK = new Scope("DISTRIBUTED_ACK");
 
   /**
@@ -62,7 +55,6 @@ public class Scope implements Serializable {
    * locking is used for all distributed operations on entries to guarantee consistency across the
    * distributed caches.
    */
-  @Immutable
   public static final Scope GLOBAL = new Scope("GLOBAL");
 
   /** The name of this scope. */
@@ -72,10 +64,8 @@ public class Scope implements Serializable {
   /** int used as ordinal to represent this Scope */
   public final int ordinal = nextOrdinal++;
 
-  @MakeImmutable
   private static int nextOrdinal = 0;
 
-  @Immutable
   private static final Scope[] VALUES = {LOCAL, DISTRIBUTED_NO_ACK, DISTRIBUTED_ACK, GLOBAL};
 
   /*

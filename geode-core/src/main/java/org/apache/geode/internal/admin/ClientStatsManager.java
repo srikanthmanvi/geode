@@ -22,7 +22,6 @@ import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsType;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.CacheWriterException;
 import org.apache.geode.cache.client.internal.PoolImpl;
 import org.apache.geode.cache.client.internal.ServerRegionProxy;
@@ -46,19 +45,16 @@ public class ClientStatsManager {
    *
    * GuardedBy ClientStatsManager.class
    */
-  @MakeNotStatic
   private static InternalCache lastInitializedCache = null;
 
   /**
    * GuardedBy ClientStatsManager.class
    */
-  @MakeNotStatic
   private static Statistics cachePerfStats = null;
 
   /**
    * GuardedBy ClientStatsManager.class
    */
-  @MakeNotStatic
   private static Statistics vmStats = null;
 
   private static final Logger logger = LogService.getLogger();

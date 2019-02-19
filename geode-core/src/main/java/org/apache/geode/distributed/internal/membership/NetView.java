@@ -33,7 +33,6 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.DataSerializer;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.distributed.internal.ClusterDistributionManager;
 import org.apache.geode.internal.DataSerializableFixedID;
@@ -58,7 +57,6 @@ public class NetView implements DataSerializableFixedID {
   private InternalDistributedMember creator;
   private Set<InternalDistributedMember> hashedMembers;
   private final Object membersLock = new Object();
-  @Immutable
   public static final Random RANDOM = new Random();
 
 

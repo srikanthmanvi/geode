@@ -26,7 +26,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.CacheClosedException;
 import org.apache.geode.cache.Region;
 import org.apache.geode.distributed.internal.DistributionConfig;
@@ -71,7 +70,6 @@ public class MemoryAllocatorImpl implements MemoryAllocator {
 
   private volatile MemoryUsageListener[] memoryUsageListeners = new MemoryUsageListener[0];
 
-  @MakeNotStatic
   private static MemoryAllocatorImpl singleton = null;
 
   public static MemoryAllocatorImpl getAllocator() {

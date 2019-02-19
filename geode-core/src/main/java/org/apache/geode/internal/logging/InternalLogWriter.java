@@ -15,7 +15,6 @@
 package org.apache.geode.internal.logging;
 
 import org.apache.geode.LogWriter;
-import org.apache.geode.annotations.internal.MakeImmutable;
 import org.apache.geode.i18n.LogWriterI18n;
 import org.apache.geode.i18n.StringId;
 
@@ -88,11 +87,9 @@ public interface InternalLogWriter extends LogWriter, LogWriterI18n {
    */
   int NONE_LEVEL = Integer.MAX_VALUE;
 
-  @MakeImmutable
   String[] levelNames = new String[] {"all", "finest", "finer", "fine", "config", "info", "warning",
       "error", "severe", "none"};
 
-  @MakeImmutable
   int[] allLevels = new int[] {ALL_LEVEL, FINEST_LEVEL, FINER_LEVEL, FINE_LEVEL, CONFIG_LEVEL,
       INFO_LEVEL, WARNING_LEVEL, ERROR_LEVEL, SEVERE_LEVEL, NONE_LEVEL};
 

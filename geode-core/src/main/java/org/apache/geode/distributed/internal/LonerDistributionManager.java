@@ -39,7 +39,6 @@ import java.util.concurrent.TimeoutException;
 import org.apache.geode.CancelCriterion;
 import org.apache.geode.InternalGemFireError;
 import org.apache.geode.admin.GemFireHealthConfig;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.CacheClosedException;
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.distributed.DurableClientAttributes;
@@ -129,7 +128,6 @@ public class LonerDistributionManager implements DistributionManager {
   private final List<InternalDistributedMember> viewMembers;
   private ConcurrentMap<InternalDistributedMember, InternalDistributedMember> canonicalIds =
       new ConcurrentHashMap<>();
-  @Immutable
   private static final DummyDMStats stats = new DummyDMStats();
   private final ExecutorService executor =
       LoggingExecutors.newCachedThreadPool("LonerDistributionManagerThread", false);

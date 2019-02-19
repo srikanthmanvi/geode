@@ -39,8 +39,6 @@ import org.apache.geode.CancelException;
 import org.apache.geode.InternalGemFireError;
 import org.apache.geode.InvalidDeltaException;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.internal.MakeNotStatic;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.CacheClosedException;
 import org.apache.geode.cache.CacheEvent;
 import org.apache.geode.cache.CacheListener;
@@ -132,7 +130,6 @@ public class DistributedRegion extends LocalRegion implements InternalDistribute
   private static final Logger logger = LogService.getLogger();
 
   /** causes cache profile to be added to afterRemoteRegionCreate notification for testing */
-  @MutableForTesting
   public static boolean TEST_HOOK_ADD_PROFILE = false;
 
   /** Used to sync accesses to this.dlockService to allow lazy construction */
@@ -177,7 +174,6 @@ public class DistributedRegion extends LocalRegion implements InternalDistribute
   private volatile boolean generateVersionTag = true;
 
   /** Tests can set this to true and ignore reliability triggered reconnects */
-  @MutableForTesting
   public static boolean ignoreReconnect = false;
 
   /**
@@ -186,7 +182,6 @@ public class DistributedRegion extends LocalRegion implements InternalDistribute
   private final Object clearLock = new Object();
   private final ReentrantReadWriteLock failedInitialImageLock = new ReentrantReadWriteLock(true);
 
-  @MakeNotStatic
   private static final AtomicBoolean loggedNetworkPartitionWarning = new AtomicBoolean(false);
 
   /** Creates a new instance of DistributedRegion */

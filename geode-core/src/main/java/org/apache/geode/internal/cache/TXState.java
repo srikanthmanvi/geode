@@ -35,7 +35,6 @@ import org.apache.geode.CancelCriterion;
 import org.apache.geode.CancelException;
 import org.apache.geode.InternalGemFireError;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.CommitConflictException;
 import org.apache.geode.cache.DiskAccessException;
 import org.apache.geode.cache.EntryNotFoundException;
@@ -146,7 +145,6 @@ public class TXState implements TXStateInterface {
   /** keeps track of results of txPutEntry */
   private Map<EventID, Boolean> seenResults = new HashMap<EventID, Boolean>();
 
-  @Immutable
   static final TXEntryState ENTRY_EXISTS = new TXEntryState();
 
   private volatile DistributedMember proxyServer;

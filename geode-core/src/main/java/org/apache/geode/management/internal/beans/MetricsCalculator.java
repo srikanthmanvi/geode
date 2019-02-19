@@ -17,8 +17,6 @@ package org.apache.geode.management.internal.beans;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.geode.annotations.Immutable;
-
 
 /**
  * This is a utility class to calculate various type of Metrics out of raw stats
@@ -27,7 +25,6 @@ import org.apache.geode.annotations.Immutable;
  */
 public class MetricsCalculator {
 
-  @Immutable
   private static final TimeUnit milliSeconds = TimeUnit.MILLISECONDS;
 
   private static long toSeconds(long fromTime, long toTime) {

@@ -19,7 +19,6 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 import org.apache.geode.DataSerializer;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.LowMemoryException;
 import org.apache.geode.cache.control.ResourceManager;
 import org.apache.geode.distributed.internal.DistributionConfig;
@@ -76,7 +75,6 @@ public class MemoryThresholds {
    * When this property is set to true, a {@link LowMemoryException} is not thrown, even when usage
    * crosses the critical threshold.
    */
-  @MutableForTesting
   private static boolean DISABLE_LOW_MEM_EXCEPTION =
       Boolean.getBoolean(DistributionConfig.GEMFIRE_PREFIX + "disableLowMemoryException");
 
@@ -133,7 +131,6 @@ public class MemoryThresholds {
    * Number of eviction or critical state changes that have to occur before the event is delivered.
    * The default is 0 so we will change states immediately by default.
    */
-  @MutableForTesting
   private static int memoryStateChangeTolerance =
       Integer.getInteger(DistributionConfig.GEMFIRE_PREFIX + "memoryEventTolerance", 0);
 

@@ -14,7 +14,6 @@
  */
 package org.apache.geode.management.internal.cli.functions;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.execute.FunctionContext;
 import org.apache.geode.cache.execute.ResultSender;
@@ -27,7 +26,6 @@ import org.apache.geode.management.internal.configuration.domain.XmlEntity;
 public class GatewaySenderDestroyFunction implements InternalFunction {
   private static final long serialVersionUID = 1L;
   private static final String ID = GatewaySenderDestroyFunction.class.getName();
-  @Immutable
   public static final GatewaySenderDestroyFunction INSTANCE = new GatewaySenderDestroyFunction();
 
   @Override

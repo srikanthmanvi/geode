@@ -52,9 +52,6 @@ import org.apache.geode.InternalGemFireError;
 import org.apache.geode.InternalGemFireException;
 import org.apache.geode.StatisticsFactory;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeNotStatic;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.AttributesFactory;
 import org.apache.geode.cache.CacheException;
 import org.apache.geode.cache.CacheListener;
@@ -184,7 +181,6 @@ public class HARegionQueue implements RegionQueue {
    * Map of HA queue region-name and value as a MapWrapper object (whose underlying map contains
    * ThreadIdentifier as key & value as the last dispatched sequence ID)
    */
-  @MakeNotStatic
   static ConcurrentMap dispatchedMessagesMap;
 
   /**
@@ -216,7 +212,6 @@ public class HARegionQueue implements RegionQueue {
   /**
    * Thread which creates the {@code QueueRemovalMessage} and sends it to other nodes in the system
    */
-  @MakeNotStatic
   private static QueueRemovalThread qrmThread;
 
   /** protects from modification during GII chunking */
@@ -259,7 +254,6 @@ public class HARegionQueue implements RegionQueue {
    * The frequency (in seconds) at which a message will be sent by the primary to all the secondary
    * nodes to remove the events which have already been dispatched from the queue.
    */
-  @MakeNotStatic
   protected static volatile int messageSyncInterval = DEFAULT_MESSAGE_SYNC_INTERVAL;
 
   /**
@@ -301,9 +295,7 @@ public class HARegionQueue implements RegionQueue {
    *
    * @since GemFire 6.0
    */
-  @MutableForTesting
   static boolean testMarkerMessageReceived = false;
-  @MutableForTesting
   static boolean isUsedByTest = false;
 
   /**
@@ -3923,11 +3915,9 @@ public class HARegionQueue implements RegionQueue {
      */
     static final int DEFAULT_THREAD_ID_EXPIRY_TIME = 300;
 
-    @Immutable
     private static final ExpirationAttributes DEFAULT_THREAD_ID_EXP_ATTS =
         new ExpirationAttributes(DEFAULT_THREAD_ID_EXPIRY_TIME, ExpirationAction.LOCAL_INVALIDATE);
 
-    @MutableForTesting
     private static volatile ExpirationAttributes testExpAtts;
 
     private final int expTime;

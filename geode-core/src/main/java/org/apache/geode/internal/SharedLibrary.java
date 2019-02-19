@@ -21,7 +21,6 @@ import java.net.URLDecoder;
 import org.apache.commons.lang3.JavaVersion;
 
 import org.apache.geode.InternalGemFireError;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.internal.DistributionConfig;
 import org.apache.geode.internal.lang.SystemUtils;
 import org.apache.geode.pdx.internal.unsafe.UnsafeWrapper;
@@ -42,7 +41,6 @@ public class SharedLibrary {
   private static final int referenceSize;
   private static final int objectHeaderSize;
 
-  @Immutable
   private static final UnsafeWrapper unsafe;
   static {
     UnsafeWrapper tmp = null;

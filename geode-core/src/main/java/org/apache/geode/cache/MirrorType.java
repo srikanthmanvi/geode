@@ -18,9 +18,6 @@ package org.apache.geode.cache;
 
 import java.io.ObjectStreamException;
 
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeImmutable;
-
 /**
  * Enumerated type for region mirroring.
  *
@@ -34,7 +31,6 @@ import org.apache.geode.annotations.internal.MakeImmutable;
  * @since GemFire 3.0
  */
 @Deprecated
-@Immutable
 public class MirrorType implements java.io.Serializable {
   private static final long serialVersionUID = -6632651349646672540L;
 
@@ -45,7 +41,6 @@ public class MirrorType implements java.io.Serializable {
    * @deprecated as of GemFire 5.0, use {@link DataPolicy#NORMAL} instead.
    */
   @Deprecated
-  @Immutable
   public static final MirrorType NONE = new MirrorType("NONE", DataPolicy.NORMAL);
 
   /**
@@ -55,7 +50,6 @@ public class MirrorType implements java.io.Serializable {
    * @deprecated as of GemFire 5.0, use {@link DataPolicy#REPLICATE} instead.
    */
   @Deprecated
-  @Immutable
   public static final MirrorType KEYS = new MirrorType("KEYS", DataPolicy.REPLICATE);
 
   /**
@@ -65,7 +59,6 @@ public class MirrorType implements java.io.Serializable {
    * @deprecated as of GemFire 5.0, use {@link DataPolicy#REPLICATE} instead.
    */
   @Deprecated
-  @Immutable
   public static final MirrorType KEYS_VALUES = new MirrorType("KEYS_VALUES", DataPolicy.REPLICATE);
 
 
@@ -81,10 +74,8 @@ public class MirrorType implements java.io.Serializable {
   /** int used as ordinal to represent this Scope */
   public final int ordinal = nextOrdinal++;
 
-  @MakeImmutable
   private static int nextOrdinal = 0;
 
-  @Immutable
   private static final MirrorType[] VALUES = {NONE, KEYS, KEYS_VALUES};
 
   private Object readResolve() throws ObjectStreamException {

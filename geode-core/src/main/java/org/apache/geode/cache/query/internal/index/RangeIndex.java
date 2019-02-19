@@ -30,7 +30,6 @@ import java.util.concurrent.ConcurrentSkipListMap;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.RegionAttributes;
 import org.apache.geode.cache.query.FunctionDomainException;
@@ -83,7 +82,6 @@ public class RangeIndex extends AbstractIndex {
   protected ThreadLocal<List> nullEntries = new ThreadLocal<List>();
   protected ThreadLocal<List> undefinedEntries = new ThreadLocal<List>();
 
-  @MutableForTesting
   public static TestHook testHook;
 
   // TODO: need more specific list of exceptions

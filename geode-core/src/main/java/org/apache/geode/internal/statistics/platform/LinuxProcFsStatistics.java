@@ -27,14 +27,10 @@ import java.util.regex.Pattern;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.internal.MakeImmutable;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.distributed.internal.DistributionConfig;
 
 public class LinuxProcFsStatistics {
-  @MakeNotStatic
   private static boolean soMaxConnProcessed;
-  @MakeNotStatic
   private static int soMaxConn;
 
   private enum CPU {
@@ -54,21 +50,14 @@ public class LinuxProcFsStatistics {
   private static final int OneMeg = 1024 * 1024;
   private static final String pageSizeProperty =
       DistributionConfig.GEMFIRE_PREFIX + "statistics.linux.pageSize";
-  @MakeNotStatic
   private static CpuStat cpuStatSingleton;
-  @MakeImmutable
   private static int pageSize;
-  @MakeImmutable
   private static int sys_cpus;
-  @MakeImmutable
   private static boolean hasProcVmStat;
-  @MakeImmutable
   private static boolean hasDiskStats;
-  @MakeImmutable
   static SpaceTokenizer tokenizer;
 
   /** The number of non-process files in /proc */
-  @MakeImmutable
   private static int nonPidFilesInProc;
 
   /** /proc/stat tokens */
@@ -699,9 +688,7 @@ public class LinuxProcFsStatistics {
   // cpu 42813766 10844 8889075 1450764512 49963779 808244 3084872
   //
   private static class CpuStat {
-    @MakeNotStatic
     private static boolean lastCpuStatsInvalid;
-    @MakeNotStatic
     private static List<Long> lastCpuStats;
 
     public CpuStat() {

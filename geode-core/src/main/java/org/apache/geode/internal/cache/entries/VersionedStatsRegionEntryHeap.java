@@ -16,7 +16,6 @@ package org.apache.geode.internal.cache.entries;
 
 import java.util.UUID;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.cache.InlineKeyHelper;
 import org.apache.geode.internal.cache.RegionEntry;
 import org.apache.geode.internal.cache.RegionEntryContext;
@@ -28,7 +27,6 @@ public abstract class VersionedStatsRegionEntryHeap extends VersionedStatsRegion
     super(context, value);
   }
 
-  @Immutable
   private static final VersionedStatsRegionEntryHeapFactory factory =
       new VersionedStatsRegionEntryHeapFactory();
 

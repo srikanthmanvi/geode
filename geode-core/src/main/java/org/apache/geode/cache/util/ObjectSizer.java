@@ -14,7 +14,6 @@
  */
 package org.apache.geode.cache.util;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.EvictionAttributes;
 import org.apache.geode.internal.size.ReflectionObjectSizer;
 import org.apache.geode.internal.size.SizeClassOnceObjectSizer;
@@ -48,7 +47,6 @@ public interface ObjectSizer {
    *
    * @since GemFire 6.5
    */
-  @Immutable
   ObjectSizer SIZE_CLASS_ONCE = SizeClassOnceObjectSizer.getInstance();
 
   /**
@@ -63,7 +61,6 @@ public interface ObjectSizer {
    *
    * @since GemFire 6.5
    */
-  @Immutable
   ObjectSizer REFLECTION_SIZE = ReflectionObjectSizer.getInstance();
 
 
@@ -72,7 +69,6 @@ public interface ObjectSizer {
    *
    * @since GemFire 6.5
    */
-  @Immutable
   ObjectSizer DEFAULT = SIZE_CLASS_ONCE;
 
   int sizeof(Object o);

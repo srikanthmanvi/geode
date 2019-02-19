@@ -14,7 +14,6 @@
  */
 package org.apache.geode.internal.cache.tier.sockets.command;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.cache.tier.Command;
 import org.apache.geode.internal.cache.tier.sockets.ObjectPartList651;
 import org.apache.geode.internal.cache.tier.sockets.SerializedObjectPartList;
@@ -29,7 +28,6 @@ import org.apache.geode.internal.cache.tier.sockets.SerializedObjectPartList;
  *
  */
 public class GetAllForRI extends GetAll651 {
-  @Immutable
   private static final GetAllForRI singleton = new GetAllForRI();
 
   public static Command getCommand() {

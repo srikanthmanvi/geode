@@ -19,7 +19,6 @@ import org.apache.geode.StatisticDescriptor;
 import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.StatisticsTypeFactory;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.Assert;
 import org.apache.geode.internal.statistics.HostStatHelper;
 import org.apache.geode.internal.statistics.LocalStatisticsImpl;
@@ -47,7 +46,6 @@ public class WindowsProcessStats {
   private static final int workingSetSizeLONG = 9;
   private static final int workingSetSizePeakLONG = 10;
 
-  @Immutable
   private static final StatisticsType myType;
 
   private static void checkOffset(String name, int offset) {

@@ -27,7 +27,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.DataSerializer;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.client.PoolFactory;
 import org.apache.geode.cache.client.ServerRefusedConnectionException;
 import org.apache.geode.cache.client.internal.ClientSideHandshakeImpl;
@@ -73,7 +72,6 @@ public abstract class Handshake {
    *
    * @since GemFire 5.7
    */
-  @MutableForTesting
   protected static Version currentClientVersion = ConnectionProxy.VERSION;
 
   protected SecurityService securityService;

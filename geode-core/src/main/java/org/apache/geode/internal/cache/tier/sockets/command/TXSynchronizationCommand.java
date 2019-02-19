@@ -17,7 +17,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 
 import java.io.IOException;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.client.internal.TXSynchronizationOp.CompletionType;
 import org.apache.geode.distributed.internal.ReplyException;
 import org.apache.geode.distributed.internal.membership.InternalDistributedMember;
@@ -36,7 +35,6 @@ import org.apache.geode.internal.security.SecurityService;
 
 public class TXSynchronizationCommand extends BaseCommand {
 
-  @Immutable
   private static final TXSynchronizationCommand singleton = new TXSynchronizationCommand();
 
   public static Command getCommand() {

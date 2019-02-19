@@ -23,7 +23,6 @@ import java.util.regex.Pattern;
 
 import org.apache.logging.log4j.Level;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.logging.log4j.LogLevel;
 
 /**
@@ -33,7 +32,6 @@ public class LogLevelExtractor {
   private static final Pattern LOG_PATTERN =
       Pattern.compile("^\\[(\\S*)\\s+([\\d\\/]+)\\s+([\\d:\\.]+)\\s+(\\S+)");
 
-  @Immutable
   private static final DateTimeFormatter LOG_TIMESTAMP_FORMATTER =
       DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss.SSS zzz");
   private static final String SPACE = " ";

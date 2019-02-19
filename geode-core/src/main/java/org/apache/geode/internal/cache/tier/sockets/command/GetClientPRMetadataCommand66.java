@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.Region;
 import org.apache.geode.internal.cache.BucketServerLocation66;
 import org.apache.geode.internal.cache.PartitionedRegion;
@@ -38,7 +37,6 @@ import org.apache.geode.internal.security.SecurityService;
  */
 public class GetClientPRMetadataCommand66 extends BaseCommand {
 
-  @Immutable
   private static final GetClientPRMetadataCommand66 singleton = new GetClientPRMetadataCommand66();
 
   public static Command getCommand() {

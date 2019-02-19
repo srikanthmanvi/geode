@@ -35,7 +35,6 @@ import org.apache.geode.CancelCriterion;
 import org.apache.geode.GemFireIOException;
 import org.apache.geode.InternalGemFireError;
 import org.apache.geode.InvalidValueException;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.AttributesFactory;
 import org.apache.geode.cache.ClientSession;
 import org.apache.geode.cache.DataPolicy;
@@ -705,7 +704,6 @@ public class CacheServerImpl extends AbstractCacheServer implements Distribution
     return getName();
   }
 
-  @MakeNotStatic
   private static final AtomicInteger profileSN = new AtomicInteger();
 
   private static int createSerialNumber() {

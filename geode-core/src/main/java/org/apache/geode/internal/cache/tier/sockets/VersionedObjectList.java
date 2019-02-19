@@ -34,7 +34,6 @@ import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.DataSerializer;
 import org.apache.geode.InternalGemFireException;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.distributed.internal.DistributionManager;
 import org.apache.geode.distributed.internal.InternalDistributedSystem;
@@ -295,7 +294,6 @@ public class VersionedObjectList extends ObjectPartList implements Externalizabl
 
   }
 
-  @Immutable
   private static final Version[] serializationVersions = new Version[] {Version.GFE_80};
 
   @Override

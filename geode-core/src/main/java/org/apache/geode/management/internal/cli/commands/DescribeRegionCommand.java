@@ -27,7 +27,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.shell.core.annotation.CliCommand;
 import org.springframework.shell.core.annotation.CliOption;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.execute.ResultCollector;
 import org.apache.geode.internal.logging.LogService;
 import org.apache.geode.management.cli.CliMetaData;
@@ -48,7 +47,6 @@ import org.apache.geode.security.ResourcePermission;
 public class DescribeRegionCommand extends InternalGfshCommand {
   public static final Logger logger = LogService.getLogger();
 
-  @Immutable
   private static final GetRegionDescriptionFunction getRegionDescription =
       new GetRegionDescriptionFunction();
 

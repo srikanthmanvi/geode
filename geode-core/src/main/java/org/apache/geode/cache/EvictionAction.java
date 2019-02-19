@@ -18,8 +18,6 @@ import java.io.Serializable;
 
 import javax.print.attribute.EnumSyntax;
 
-import org.apache.geode.annotations.Immutable;
-
 /**
  * The action that an {@link org.apache.geode.cache.EvictionAlgorithm} takes.
  *
@@ -27,20 +25,17 @@ import org.apache.geode.annotations.Immutable;
  * @see org.apache.geode.cache.EvictionAlgorithm
  * @see org.apache.geode.internal.cache.EvictionAttributesImpl
  */
-@Immutable
 public final class EvictionAction extends EnumSyntax implements Serializable {
   private static final long serialVersionUID = -98840597493242980L;
   /**
    * Canonical EvictionAction that represents no eviction
    */
-  @Immutable
   public static final EvictionAction NONE = new EvictionAction(0);
 
   /**
    * Perform a {@link org.apache.geode.cache.Region#localDestroy(Object) localDestory} on the least
    * recently used region entry.
    */
-  @Immutable
   public static final EvictionAction LOCAL_DESTROY = new EvictionAction(1);
 
   /**
@@ -48,13 +43,11 @@ public final class EvictionAction extends EnumSyntax implements Serializable {
    * value in the VM to free up heap space. Note that this action is only available when the region
    * has been configured to access data on disk.
    */
-  @Immutable
   public static final EvictionAction OVERFLOW_TO_DISK = new EvictionAction(2);
 
   /**
    * The default eviction action is to {@linkplain #LOCAL_DESTROY locally destroy} an Entry.
    */
-  @Immutable
   public static final EvictionAction DEFAULT_EVICTION_ACTION = LOCAL_DESTROY;
 
   private EvictionAction(int val) {
@@ -69,7 +62,6 @@ public final class EvictionAction extends EnumSyntax implements Serializable {
   }
 
   // TODO post Java 1.8.0u45 uncomment final flag, see JDK-8076152
-  @Immutable
   private static final EvictionAction[] enumValueTable = {NONE, LOCAL_DESTROY, OVERFLOW_TO_DISK};
 
   @Override

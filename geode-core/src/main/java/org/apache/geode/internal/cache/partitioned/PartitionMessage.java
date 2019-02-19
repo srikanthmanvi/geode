@@ -26,7 +26,6 @@ import org.apache.geode.CancelException;
 import org.apache.geode.DataSerializer;
 import org.apache.geode.InternalGemFireError;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.CacheClosedException;
 import org.apache.geode.cache.CacheException;
 import org.apache.geode.cache.DiskAccessException;
@@ -75,7 +74,6 @@ public abstract class PartitionMessage extends DistributionMessage
   private static final Logger logger = LogService.getLogger();
 
   /** default exception to ensure a false-positive response is never returned */
-  @Immutable
   static final ForceReattemptException UNHANDLED_EXCEPTION =
       (ForceReattemptException) new ForceReattemptException(
           "Unknown exception")

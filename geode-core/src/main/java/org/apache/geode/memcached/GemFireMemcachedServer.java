@@ -29,7 +29,6 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.geode.LogWriter;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.CacheFactory;
 import org.apache.geode.cache.Region;
@@ -62,7 +61,6 @@ public class GemFireMemcachedServer {
     ASCII, BINARY
   }
 
-  @MakeNotStatic
   private static LogWriter logger;
 
   /**

@@ -21,7 +21,6 @@ import java.io.IOException;
 
 import org.apache.geode.DataSerializable;
 import org.apache.geode.DataSerializer;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.InternalDataSerializer;
 
 /**
@@ -40,7 +39,6 @@ import org.apache.geode.internal.InternalDataSerializer;
 public class ExpirationAttributes implements DataSerializable {
   private static final long serialVersionUID = 5956885652945706394L;
   /** convenience constant for a default instance */
-  @Immutable
   public static final ExpirationAttributes DEFAULT = new ExpirationAttributes();
 
   /** The number of seconds since this value or region was created before it expires. */

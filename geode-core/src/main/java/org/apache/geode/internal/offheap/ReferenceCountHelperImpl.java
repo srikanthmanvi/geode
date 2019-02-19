@@ -22,7 +22,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.internal.cache.RegionEntry;
 
 /**
@@ -36,7 +35,6 @@ class ReferenceCountHelperImpl {
   private ThreadLocal<Object> refCountOwner;
   private ThreadLocal<AtomicInteger> refCountReenterCount;
   private static final Object SKIP_REF_COUNT_TRACKING = new Object();
-  @MakeNotStatic
   private static final List<RefCountChangeInfo> LOCKED = Collections.emptyList();
 
   ReferenceCountHelperImpl(boolean trackRefCounts, boolean trackFreedRefCounts) {

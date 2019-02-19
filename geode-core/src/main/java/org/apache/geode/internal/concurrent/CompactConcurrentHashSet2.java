@@ -47,9 +47,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeNotStatic;
-
 /**
  * <p>
  * This is the original javadoc describing ConcurrentHashMap. This class is actually a Set based on
@@ -317,7 +314,6 @@ public class CompactConcurrentHashSet2<V> extends AbstractSet<V> implements Set<
   static final int NCPU = Runtime.getRuntime().availableProcessors();
 
   /** For serialization compatibility. */
-  @Immutable
   private static final ObjectStreamField[] serialPersistentFields =
       {new ObjectStreamField("segments", Segment[].class),
           new ObjectStreamField("segmentMask", Integer.TYPE),
@@ -1960,7 +1956,6 @@ public class CompactConcurrentHashSet2<V> extends AbstractSet<V> implements Set<
       return true;
     }
 
-    @Immutable
     private static final sun.misc.Unsafe U;
     private static final long LOCKSTATE;
     static {
@@ -2173,7 +2168,6 @@ public class CompactConcurrentHashSet2<V> extends AbstractSet<V> implements Set<
   /**
    * Generates initial value for per-thread CounterHashCodes.
    */
-  @MakeNotStatic("Possible ok singleton?")
   static final AtomicInteger counterHashCodeGenerator = new AtomicInteger();
 
   /**
@@ -2286,7 +2280,6 @@ public class CompactConcurrentHashSet2<V> extends AbstractSet<V> implements Set<
   }
 
   // Unsafe mechanics
-  @Immutable
   private static final sun.misc.Unsafe U;
   private static final long SIZECTL;
   private static final long TRANSFERINDEX;

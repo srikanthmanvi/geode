@@ -14,8 +14,6 @@
  */
 package org.apache.geode;
 
-import org.apache.geode.annotations.internal.MakeNotStatic;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.distributed.internal.DistributionConfig;
 import org.apache.geode.internal.ExitCode;
 import org.apache.geode.internal.SystemFailureTestHook;
@@ -150,7 +148,6 @@ public final class SystemFailure {
   /**
    * Time to wait during stopWatchdog and stopProctor. Not final for tests
    */
-  @MutableForTesting
   static int SHUTDOWN_WAIT = 1000;
   /**
    * Preallocated error messages may use memory (in the form of an iterator) so we
@@ -173,7 +170,6 @@ public final class SystemFailure {
    * @see #getFailure()
    * @see #initiateFailure(Error)
    */
-  @MakeNotStatic
   protected static volatile Error failure = null;
 
   /**
@@ -181,7 +177,6 @@ public final class SystemFailure {
    *
    * @see #setFailureAction(Runnable)
    */
-  @MakeNotStatic
   private static volatile Runnable failureAction = () -> {
     System.err.println(JVM_CORRUPTION);
     failure.printStackTrace();
@@ -190,13 +185,11 @@ public final class SystemFailure {
   /**
    * @see #setExitOK(boolean)
    */
-  @MakeNotStatic
   private static volatile boolean exitOK = false;
 
   /**
    * If we're going to exit the JVM, I want to be accountable for who told us it was OK.
    */
-  @MakeNotStatic
   private static volatile Throwable exitExcuse;
 
   /**
@@ -248,7 +241,6 @@ public final class SystemFailure {
    *
    * @see #emergencyClose()
    */
-  @MakeNotStatic
   private static volatile boolean gemfireCloseCompleted = false;
 
   /**
@@ -256,7 +248,6 @@ public final class SystemFailure {
    *
    * @see #setFailureAction(Runnable)
    */
-  @MakeNotStatic
   private static volatile boolean failureActionCompleted = false;
 
   /**
@@ -278,10 +269,8 @@ public final class SystemFailure {
    *
    * @guarded.By {@link #failureSync}
    */
-  @MakeNotStatic
   private static Thread watchDog;
 
-  @MakeNotStatic
   private static volatile boolean isCacheClosing = false;
 
   /**
@@ -466,7 +455,6 @@ public final class SystemFailure {
    * @guarded.By {@link #failureSync}
    * @see #minimumMemoryThreshold
    */
-  @MakeNotStatic
   private static Thread proctor;
 
   /**
@@ -485,7 +473,6 @@ public final class SystemFailure {
    * @see #setFailureMemoryThreshold(long)
    * @guarded.By {@link #memorySync}
    */
-  @MakeNotStatic
   static long minimumMemoryThreshold = Long.getLong(
       DistributionConfig.GEMFIRE_PREFIX + "SystemFailure.chronic_memory_threshold", 1048576);
 
@@ -571,14 +558,12 @@ public final class SystemFailure {
    *
    * @guarded.By {@link #memorySync}}}
    */
-  @MakeNotStatic
   private static long firstStarveTime = NEVER_STARVED;
 
   /**
    * This is the previous measure of total memory. If it changes, we reset the proctor's starve
    * statistic.
    */
-  @MakeNotStatic
   private static long lastTotalMemory = 0;
 
   /**
@@ -735,7 +720,6 @@ public final class SystemFailure {
   /**
    * break any potential circularity in {@link #loadEmergencyClasses()}
    */
-  @MakeNotStatic
   private static volatile boolean emergencyClassesLoaded = false;
 
   /**
@@ -990,7 +974,6 @@ public final class SystemFailure {
     }
   }
 
-  @MakeNotStatic
   private static volatile boolean stopping;
 
   /**

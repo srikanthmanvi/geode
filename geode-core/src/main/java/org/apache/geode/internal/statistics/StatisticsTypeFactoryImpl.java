@@ -21,7 +21,6 @@ import java.util.HashMap;
 import org.apache.geode.StatisticDescriptor;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.StatisticsTypeFactory;
-import org.apache.geode.annotations.Immutable;
 
 /**
  * The implementation of {@link StatisticsTypeFactory}. Each VM can any have a single instance of
@@ -35,7 +34,6 @@ import org.apache.geode.annotations.Immutable;
  */
 public class StatisticsTypeFactoryImpl implements StatisticsTypeFactory {
   // static fields
-  @Immutable
   private static final StatisticsTypeFactoryImpl singleton = new StatisticsTypeFactoryImpl();
 
   // static methods

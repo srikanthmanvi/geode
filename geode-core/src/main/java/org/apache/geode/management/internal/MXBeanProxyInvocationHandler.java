@@ -24,7 +24,6 @@ import java.util.Set;
 import javax.management.ObjectName;
 
 import org.apache.geode.LogWriter;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.internal.InternalDistributedSystem;
 
 /**
@@ -148,7 +147,6 @@ public class MXBeanProxyInvocationHandler {
       return +1;
     }
 
-    @Immutable
     public static final MethodOrder instance = new MethodOrder();
   }
 

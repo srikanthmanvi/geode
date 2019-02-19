@@ -31,7 +31,6 @@ import java.util.List;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.execute.FunctionContext;
 import org.apache.geode.distributed.DistributedSystem;
 import org.apache.geode.distributed.internal.InternalDistributedSystem;
@@ -52,7 +51,6 @@ public class NetstatFunction implements InternalFunction {
   private static final Logger logger = LogService.getLogger();
   private static final long serialVersionUID = 1L;
 
-  @Immutable
   public static final NetstatFunction INSTANCE = new NetstatFunction();
 
   private static final String ID = NetstatFunction.class.getName();

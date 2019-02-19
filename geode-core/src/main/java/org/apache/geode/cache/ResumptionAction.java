@@ -19,9 +19,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeNotStatic;
-
 
 /**
  * Specifies how the region is affected by resumption of reliability when one or more missing
@@ -30,12 +27,10 @@ import org.apache.geode.annotations.internal.MakeNotStatic;
  *
  * @deprecated this API is scheduled to be removed
  */
-@Immutable
 public class ResumptionAction implements java.io.Serializable {
   private static final long serialVersionUID = 6632254151314915610L;
 
   /** No special action takes place when reliability resumes. */
-  @Immutable
   public static final ResumptionAction NONE = new ResumptionAction("NONE");
 
   /**
@@ -45,7 +40,6 @@ public class ResumptionAction implements java.io.Serializable {
    * subsequent methods invoked on those references will throw a
    * {@link RegionReinitializedException}.
    */
-  @Immutable
   public static final ResumptionAction REINITIALIZE = new ResumptionAction("REINITIALIZE");
 
   /** The name of this mirror type. */
@@ -55,14 +49,11 @@ public class ResumptionAction implements java.io.Serializable {
   /** byte used as ordinal to represent this Scope */
   public final byte ordinal = nextOrdinal++;
 
-  @MakeNotStatic
   private static byte nextOrdinal = 0;
 
-  @Immutable
   private static final ResumptionAction[] PRIVATE_VALUES = {NONE, REINITIALIZE};
 
   /** List of all ResumptionAction values */
-  @Immutable
   public static final List VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));
 
   private Object readResolve() throws ObjectStreamException {

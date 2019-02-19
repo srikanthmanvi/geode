@@ -20,7 +20,6 @@ import java.util.Set;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.internal.MakeImmutable;
 import org.apache.geode.internal.logging.LogService;
 
 /**
@@ -40,7 +39,6 @@ public class CacheXmlPropertyResolverHelper {
    * This <code>HashMap </code> contains valid suffixes and prefixes to be parsed by
    * {@link CacheXmlPropertyResolverHelper} like {}, [] or ().
    */
-  @MakeImmutable
   private static final HashMap<String, String> validSuffixAndPrefixes =
       new HashMap<String, String>();
 

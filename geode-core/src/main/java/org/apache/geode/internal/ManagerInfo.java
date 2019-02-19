@@ -32,7 +32,6 @@ import org.apache.geode.GemFireIOException;
 import org.apache.geode.SystemIsRunningException;
 import org.apache.geode.UncreatedSystemException;
 import org.apache.geode.UnstartedSystemException;
-import org.apache.geode.annotations.internal.MakeImmutable;
 
 /**
  * Represents the information about the manager that is stored in its SystemAdmin manager VM's main
@@ -157,7 +156,6 @@ public class ManagerInfo implements DataSerializable {
     return this.bindAddress;
   }
 
-  @MakeImmutable
   static final String[] statusNames =
       new String[] {"stopped",
           "stopping",

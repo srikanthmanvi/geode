@@ -90,8 +90,6 @@ import org.apache.geode.LogWriter;
 import org.apache.geode.SerializationException;
 import org.apache.geode.SystemFailure;
 import org.apache.geode.admin.internal.SystemMemberCacheEventProcessor;
-import org.apache.geode.annotations.internal.MakeNotStatic;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.AttributesFactory;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.CacheClosedException;
@@ -279,7 +277,6 @@ public class GemFireCacheImpl implements InternalCache, InternalClientCache, Has
   /**
    * The {@code CacheLifecycleListener} s that have been registered in this VM
    */
-  @MakeNotStatic
   private static final Set<CacheLifecycleListener> cacheLifecycleListeners = new HashSet<>();
 
   /**
@@ -310,7 +307,6 @@ public class GemFireCacheImpl implements InternalCache, InternalClientCache, Has
    *
    * @since GemFire h****** 6.1.2.9
    */
-  @MutableForTesting
   static boolean DELTAS_RECALCULATE_SIZE =
       Boolean.getBoolean(DistributionConfig.GEMFIRE_PREFIX + "DELTAS_RECALCULATE_SIZE");
 
@@ -324,7 +320,6 @@ public class GemFireCacheImpl implements InternalCache, InternalClientCache, Has
    * System property to limit the max query-execution time. By default its turned off (-1), the time
    * is set in milliseconds.
    */
-  @MutableForTesting
   public static int MAX_QUERY_EXECUTION_TIME =
       Integer.getInteger(DistributionConfig.GEMFIRE_PREFIX + "Cache.MAX_QUERY_EXECUTION_TIME", -1);
 
@@ -337,7 +332,6 @@ public class GemFireCacheImpl implements InternalCache, InternalClientCache, Has
   /**
    * Property set to true if resource manager heap percentage is set and query monitor is required
    */
-  @MakeNotStatic
   private static boolean queryMonitorRequiredForResourceManager = false;
 
   /** time in milliseconds */
@@ -1157,7 +1151,6 @@ public class GemFireCacheImpl implements InternalCache, InternalClientCache, Has
   /**
    * Used by unit tests to force cache creation to use a test generated cache.xml
    */
-  @MutableForTesting
   public static File testCacheXml = null;
 
   /**
@@ -1666,7 +1659,6 @@ public class GemFireCacheImpl implements InternalCache, InternalClientCache, Has
   /**
    * break any potential circularity in {@link #loadEmergencyClasses()}
    */
-  @MakeNotStatic
   private static volatile boolean emergencyClassesLoaded = false;
 
   /**
@@ -2581,7 +2573,6 @@ public class GemFireCacheImpl implements InternalCache, InternalClientCache, Has
   }
 
   // TODO: remove static from defaultDiskStoreName and move methods to InternalCache
-  @MakeNotStatic
   private static String defaultDiskStoreName = DiskStoreFactory.DEFAULT_DISK_STORE_NAME;
 
   @Override

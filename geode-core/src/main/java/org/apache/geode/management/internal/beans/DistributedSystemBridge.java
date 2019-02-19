@@ -40,7 +40,6 @@ import javax.management.ObjectName;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.persistence.PersistentID;
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.distributed.internal.ClusterDistributionManager;
@@ -191,7 +190,6 @@ public class DistributedSystemBridge {
   /**
    * Static reference to the platform mbean server
    */
-  @MakeNotStatic
   private static final MBeanServer mbeanServer = MBeanJMXAdapter.mbeanServer;
 
   /**

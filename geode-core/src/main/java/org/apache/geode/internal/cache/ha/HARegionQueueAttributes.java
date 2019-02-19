@@ -14,7 +14,6 @@
  */
 package org.apache.geode.internal.cache.ha;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.internal.DistributionConfig;
 
 /**
@@ -50,7 +49,6 @@ public class HARegionQueueAttributes {
   // HARegionAttributesFactory instead of directly
   // providing getter/setter in HARegionAttributes. HAregionAttributes should be
   // immutable
-  @Immutable
   static final HARegionQueueAttributes DEFAULT_HARQ_ATTRIBUTES = new HARegionQueueAttributes();
 
   /**

@@ -19,7 +19,6 @@ import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsFactory;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.StatisticsTypeFactory;
-import org.apache.geode.annotations.Immutable;
 
 /**
  * Statistics related to the statistic sampler.
@@ -34,7 +33,6 @@ public class StatSamplerStats {
   public static final String SAMPLE_CALLBACK_ERRORS = "sampleCallbackErrors"; // int
   public static final String SAMPLE_CALLBACK_DURATION = "sampleCallbackDuration"; // long
 
-  @Immutable
   private static final StatisticsType samplerType;
   private static final int sampleCountId;
   private static final int sampleTimeId;

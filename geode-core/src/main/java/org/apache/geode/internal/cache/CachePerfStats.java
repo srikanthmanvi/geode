@@ -19,9 +19,7 @@ import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsFactory;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.StatisticsTypeFactory;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.annotations.VisibleForTesting;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.distributed.internal.PoolStatHelper;
 import org.apache.geode.distributed.internal.QueueStatHelper;
 import org.apache.geode.internal.NanoTimer;
@@ -31,10 +29,8 @@ import org.apache.geode.internal.statistics.StatisticsTypeFactoryImpl;
  * CachePerfStats tracks statistics about Geode cache performance and usage.
  */
 public class CachePerfStats {
-  @MakeNotStatic
   public static boolean enableClockStats;
 
-  @Immutable
   private static final StatisticsType type;
 
   static final int loadsInProgressId;

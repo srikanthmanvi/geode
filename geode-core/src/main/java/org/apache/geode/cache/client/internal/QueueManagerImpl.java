@@ -38,7 +38,6 @@ import org.apache.geode.CancelException;
 import org.apache.geode.GemFireConfigException;
 import org.apache.geode.GemFireException;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.InterestResultPolicy;
 import org.apache.geode.cache.NoSubscriptionServersAvailableException;
 import org.apache.geode.cache.client.ServerConnectivityException;
@@ -76,7 +75,6 @@ import org.apache.geode.security.GemFireSecurityException;
 public class QueueManagerImpl implements QueueManager {
   private static final Logger logger = LogService.getLogger();
 
-  @Immutable
   private static final Comparator QSIZE_COMPARATOR = new QSizeComparator();
 
   protected final long redundancyRetryInterval;
@@ -1251,7 +1249,6 @@ public class QueueManagerImpl implements QueueManager {
    *
    *
    */
-  @Immutable
   protected static class QSizeComparator implements java.util.Comparator {
     @Override
     public int compare(Object o1, Object o2) {

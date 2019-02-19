@@ -16,7 +16,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 
 import java.io.IOException;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.DynamicRegionFactory;
 import org.apache.geode.cache.operations.UnregisterInterestOperationContext;
 import org.apache.geode.internal.cache.tier.Command;
@@ -34,7 +33,6 @@ import org.apache.geode.security.ResourcePermission.Resource;
 
 public class UnregisterInterest extends BaseCommand {
 
-  @Immutable
   private static final UnregisterInterest singleton = new UnregisterInterest();
 
   public static Command getCommand() {

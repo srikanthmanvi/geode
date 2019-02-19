@@ -24,8 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.geode.annotations.Immutable;
-
 /**
  * The AbstractSignalNotificationHandler class...
  *
@@ -37,7 +35,6 @@ public abstract class AbstractSignalNotificationHandler {
    * @deprecated use the enumerated type instead...
    */
   @Deprecated
-  @Immutable
   protected static final List<String> SIGNAL_NAMES;
 
   // Based on Open BSD OS Signals...
@@ -50,7 +47,6 @@ public abstract class AbstractSignalNotificationHandler {
     SIGNAL_NAMES = Collections.unmodifiableList(Arrays.asList(SIGNAL_NAMES_ARRAY));
   }
 
-  @Immutable
   private static final SignalListener LOGGING_SIGNAL_LISTENER =
       event -> System.out.printf("Logging SignalListener Received Signal '%1$s' (%2$d)%n",
           event.getSignal().getName(), event.getSignal().getNumber());

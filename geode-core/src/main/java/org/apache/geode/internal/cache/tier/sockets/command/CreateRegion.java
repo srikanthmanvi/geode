@@ -16,7 +16,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 
 import java.io.IOException;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.AttributesFactory;
 import org.apache.geode.cache.Region;
 import org.apache.geode.internal.cache.tier.Command;
@@ -33,7 +32,6 @@ import org.apache.geode.security.ResourcePermission.Resource;
 
 public class CreateRegion extends BaseCommand {
 
-  @Immutable
   private static final CreateRegion singleton = new CreateRegion();
 
   public static Command getCommand() {

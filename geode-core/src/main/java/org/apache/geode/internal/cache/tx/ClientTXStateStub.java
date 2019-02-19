@@ -23,7 +23,6 @@ import javax.transaction.Status;
 import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.GemFireException;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.CommitConflictException;
 import org.apache.geode.cache.TransactionDataNodeHasDepartedException;
 import org.apache.geode.cache.TransactionException;
@@ -51,7 +50,6 @@ public class ClientTXStateStub extends TXStateStub {
   private static final Logger logger = LogService.getLogger();
 
   /** test hook - used to find out what operations were performed in the last tx */
-  @MutableForTesting
   private static ThreadLocal<List<TransactionalOperation>> recordedTransactionalOperations = null;
 
   /**

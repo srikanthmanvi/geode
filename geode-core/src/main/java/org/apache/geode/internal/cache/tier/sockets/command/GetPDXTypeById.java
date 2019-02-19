@@ -16,7 +16,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 
 import java.io.IOException;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.cache.InternalCache;
 import org.apache.geode.internal.cache.tier.Command;
 import org.apache.geode.internal.cache.tier.MessageType;
@@ -29,7 +28,6 @@ import org.apache.geode.pdx.internal.TypeRegistry;
 
 public class GetPDXTypeById extends BaseCommand {
 
-  @Immutable
   private static final GetPDXTypeById singleton = new GetPDXTypeById();
 
   public static Command getCommand() {

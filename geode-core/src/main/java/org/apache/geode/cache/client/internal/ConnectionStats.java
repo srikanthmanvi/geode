@@ -19,7 +19,6 @@ import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsFactory;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.StatisticsTypeFactory;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.internal.DistributionStats;
 import org.apache.geode.internal.cache.PoolStats;
 import org.apache.geode.internal.cache.tier.sockets.MessageStats;
@@ -32,9 +31,7 @@ import org.apache.geode.internal.statistics.StatisticsTypeFactoryImpl;
  */
 public class ConnectionStats implements MessageStats {
   // static fields
-  @Immutable
   private static final StatisticsType type;
-  @Immutable
   private static final StatisticsType sendType;
 
   ///////////////////////////////////////////////////////////////////////
@@ -442,7 +439,6 @@ public class ConnectionStats implements MessageStats {
   // An array of all of the ids that represent operation statistics. This
   // is used by the getOps method to aggregate the individual stats
   // into a total value for all operations.
-  @Immutable
   private static final int[] opIds;
 
   static {

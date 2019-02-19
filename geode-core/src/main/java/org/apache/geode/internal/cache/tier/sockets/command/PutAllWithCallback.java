@@ -16,7 +16,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 
 import java.io.IOException;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.cache.tier.Command;
 import org.apache.geode.internal.cache.tier.sockets.Message;
 import org.apache.geode.internal.cache.tier.sockets.Part;
@@ -27,7 +26,6 @@ import org.apache.geode.internal.cache.tier.sockets.Part;
  */
 public class PutAllWithCallback extends PutAll80 {
 
-  @Immutable
   private static final PutAllWithCallback singleton = new PutAllWithCallback();
 
   public static Command getCommand() {

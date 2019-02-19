@@ -68,8 +68,6 @@ import org.apache.geode.LogWriter;
 import org.apache.geode.Statistics;
 import org.apache.geode.SystemFailure;
 import org.apache.geode.admin.internal.SystemMemberCacheEventProcessor;
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.AttributesMutator;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.CacheClosedException;
@@ -428,7 +426,6 @@ public class LocalRegion extends AbstractRegion implements LoaderHelperFactory,
    * just after clear on map is done. Its visibility is default so that only tests present in
    * org.apache.geode.internal.cache will be able to see it
    */
-  @MakeNotStatic("This is modified in production code")
   public static boolean ISSUE_CALLBACKS_TO_CACHE_OBSERVER = false;
 
   /**
@@ -10516,7 +10513,6 @@ public class LocalRegion extends AbstractRegion implements LoaderHelperFactory,
   }
 
   /** visitor over the CacheProfiles to check if the region has a CacheLoader */
-  @Immutable
   private static final DistributionAdvisor.ProfileVisitor<Void> netLoaderVisitor =
       new DistributionAdvisor.ProfileVisitor<Void>() {
         @Override
@@ -10536,7 +10532,6 @@ public class LocalRegion extends AbstractRegion implements LoaderHelperFactory,
       };
 
   /** visitor over the CacheProfiles to check if the region has a CacheWriter */
-  @Immutable
   private static final DistributionAdvisor.ProfileVisitor<Void> netWriterVisitor =
       new DistributionAdvisor.ProfileVisitor<Void>() {
         @Override

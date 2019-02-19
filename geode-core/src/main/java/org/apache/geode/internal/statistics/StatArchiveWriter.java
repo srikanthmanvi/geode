@@ -37,7 +37,6 @@ import org.apache.logging.log4j.Logger;
 import org.apache.geode.GemFireIOException;
 import org.apache.geode.InternalGemFireException;
 import org.apache.geode.StatisticDescriptor;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.distributed.internal.DistributionConfig;
 import org.apache.geode.internal.NanoTimer;
 import org.apache.geode.internal.logging.LogService;
@@ -52,11 +51,8 @@ public class StatArchiveWriter implements StatArchiveFormat, SampleHandler {
 
   private static final Logger logger = LogService.getLogger();
 
-  @MakeNotStatic
   private static volatile String traceStatisticsName = null;
-  @MakeNotStatic
   private static volatile String traceStatisticsTypeName = null;
-  @MakeNotStatic
   private static volatile int traceResourceInstId = -1;
 
   private final boolean trace =

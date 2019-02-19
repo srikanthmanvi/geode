@@ -37,9 +37,7 @@ import org.apache.geode.CancelException;
 import org.apache.geode.DataSerializer;
 import org.apache.geode.InternalGemFireError;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.annotations.VisibleForTesting;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.CacheEvent;
 import org.apache.geode.cache.EntryEvent;
 import org.apache.geode.cache.Operation;
@@ -109,8 +107,7 @@ public class FilterProfile implements DataSerializableFixedID {
   /**
    * these booleans tell whether the associated operationType pertains to CQs or not
    */
-  @Immutable
-  private static final boolean[] isCQOperation =
+  static final boolean[] isCQOperation =
       {false, false, false, false, false, false, false, false, false, true, true, true, true, true};
 
   /**
@@ -1035,7 +1032,6 @@ public class FilterProfile implements DataSerializableFixedID {
     }
   }
 
-  @Immutable
   static final Profile[] NO_PROFILES = new Profile[0];
 
   private final CacheProfile localProfile = new CacheProfile(this);
@@ -2252,7 +2248,6 @@ public class FilterProfile implements DataSerializableFixedID {
     return null;
   }
 
-  @MutableForTesting
   public static TestHook testHook = null;
 
   /** Test Hook */

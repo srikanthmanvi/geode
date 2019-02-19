@@ -14,7 +14,6 @@
  */
 package org.apache.geode.internal.admin;
 
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.AttributesFactory;
 import org.apache.geode.cache.CacheListener;
 import org.apache.geode.cache.ExpirationAction;
@@ -42,7 +41,6 @@ public class ClientHealthMonitoringRegion {
    * <p>
    * GuardedBy ClientHealthMonitoringRegion.class
    */
-  @MakeNotStatic
   private static Region currentInstance;
 
   /**

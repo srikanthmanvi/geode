@@ -17,7 +17,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.DynamicRegionFactory;
 import org.apache.geode.cache.EntryNotFoundException;
 import org.apache.geode.cache.Operation;
@@ -47,7 +46,6 @@ import org.apache.geode.security.ResourcePermission.Resource;
 
 public class Destroy65 extends BaseCommand {
 
-  @Immutable
   private static final Destroy65 singleton = new Destroy65();
 
   public static Command getCommand() {

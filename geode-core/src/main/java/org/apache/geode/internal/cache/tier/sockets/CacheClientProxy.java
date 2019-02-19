@@ -46,7 +46,6 @@ import org.apache.geode.CancelException;
 import org.apache.geode.DataSerializer;
 import org.apache.geode.StatisticsFactory;
 import org.apache.geode.annotations.VisibleForTesting;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.CacheException;
 import org.apache.geode.cache.ClientSession;
@@ -225,7 +224,6 @@ public class CacheClientProxy implements ClientSession {
   /**
    * for testing purposes, delays the start of the dispatcher thread
    */
-  @MutableForTesting
   public static boolean isSlowStartForTesting = false;
 
   /**
@@ -275,7 +273,6 @@ public class CacheClientProxy implements ClientSession {
   /**
    * A debug flag used for testing Backward compatibility
    */
-  @MutableForTesting
   public static boolean AFTER_MESSAGE_CREATION_FLAG = false;
 
   /**
@@ -3037,6 +3034,5 @@ public class CacheClientProxy implements ClientSession {
     void doTestHook(String spot);
   }
 
-  @MutableForTesting
   public static TestHook testHook;
 }

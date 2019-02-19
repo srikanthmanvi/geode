@@ -16,7 +16,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 
 import java.io.IOException;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.cache.EventID;
 import org.apache.geode.internal.cache.tier.Command;
 import org.apache.geode.internal.cache.tier.sockets.BaseCommand;
@@ -29,7 +28,6 @@ import org.apache.geode.internal.security.SecurityService;
 
 public class PeriodicAck extends BaseCommand {
 
-  @Immutable
   private static final PeriodicAck singleton = new PeriodicAck();
 
   public static Command getCommand() {

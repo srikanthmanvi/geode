@@ -24,8 +24,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 
-import org.apache.geode.annotations.Immutable;
-
 /**
  * Utility operations for processes such as identifying the process id (pid).
  *
@@ -33,7 +31,6 @@ import org.apache.geode.annotations.Immutable;
  */
 public class ProcessUtils {
 
-  @Immutable
   private static final InternalProcessUtils internal = initializeInternalProcessUtils();
 
   private ProcessUtils() {

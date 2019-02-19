@@ -23,7 +23,6 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 import org.apache.geode.GemFireIOException;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.client.ClientCache;
 import org.apache.geode.cache.client.ClientRegionShortcut;
 import org.apache.geode.cache.client.PoolManager;
@@ -1682,7 +1681,6 @@ public class AttributesFactory<K, V> {
       setHasScope(true);
     }
 
-    @Immutable
     private static final CacheListener<?, ?>[] EMPTY_LISTENERS = new CacheListener[0];
 
     @Override

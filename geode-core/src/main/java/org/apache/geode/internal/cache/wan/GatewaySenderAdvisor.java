@@ -28,7 +28,6 @@ import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.CancelException;
 import org.apache.geode.DataSerializer;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.asyncqueue.AsyncEventListener;
 import org.apache.geode.cache.util.Gateway;
 import org.apache.geode.cache.wan.GatewaySender.OrderPolicy;
@@ -675,7 +674,6 @@ public class GatewaySenderAdvisor extends DistributionAdvisor {
       }
     }
 
-    @Immutable
     private static final Version[] serializationVersions = new Version[] {Version.GFE_80};
 
     @Override

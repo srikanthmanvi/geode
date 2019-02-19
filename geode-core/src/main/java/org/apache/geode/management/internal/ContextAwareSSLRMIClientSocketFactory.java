@@ -22,7 +22,6 @@ import java.rmi.server.RMIClientSocketFactory;
 
 import javax.rmi.ssl.SslRMIClientSocketFactory;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.net.SocketCreator;
 import org.apache.geode.internal.net.SocketCreatorFactory;
 import org.apache.geode.internal.security.SecurableCommunicationChannel;
@@ -38,7 +37,6 @@ public class ContextAwareSSLRMIClientSocketFactory implements RMIClientSocketFac
 
   private static final long serialVersionUID = 8159615071011918570L;
 
-  @Immutable
   private static final SslRMIClientSocketFactory defaultFactory = new SslRMIClientSocketFactory();
 
   @Override

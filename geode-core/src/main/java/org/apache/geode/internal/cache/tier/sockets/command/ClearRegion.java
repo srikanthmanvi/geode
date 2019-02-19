@@ -17,7 +17,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.operations.RegionClearOperationContext;
 import org.apache.geode.distributed.internal.DistributionStats;
 import org.apache.geode.internal.cache.EventID;
@@ -37,7 +36,6 @@ import org.apache.geode.security.ResourcePermission.Resource;
 
 public class ClearRegion extends BaseCommand {
 
-  @Immutable
   private static final ClearRegion singleton = new ClearRegion();
 
   private ClearRegion() {}

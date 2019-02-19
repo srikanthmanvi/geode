@@ -29,7 +29,6 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.apache.geode.LogWriter;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.ExitCode;
 
 /**
@@ -43,9 +42,7 @@ import org.apache.geode.internal.ExitCode;
  */
 public class SortLogFile {
 
-  @Immutable
   private static final PrintStream out = System.out;
-  @Immutable
   private static final PrintStream err = System.err;
 
   /**

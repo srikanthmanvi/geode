@@ -19,12 +19,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.configuration.RegionConfig;
 import org.apache.geode.cache.query.IndexType;
 
 class IndexDefinition {
-  @Immutable
   static final Set<RegionConfig.Index> indexDefinitions =
       Collections.synchronizedSet(new HashSet<>());
 

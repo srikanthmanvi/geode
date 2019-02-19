@@ -19,8 +19,6 @@ import org.apache.logging.log4j.core.config.plugins.Plugin;
 import org.apache.logging.log4j.core.pattern.ConverterKeys;
 import org.apache.logging.log4j.core.pattern.LogEventPatternConverter;
 
-import org.apache.geode.annotations.Immutable;
-
 /**
  * Formats the event thread id in hex format.
  */
@@ -30,7 +28,6 @@ public class HexThreadIdPatternConverter extends LogEventPatternConverter {
   /**
    * Singleton.
    */
-  @Immutable
   static final HexThreadIdPatternConverter INSTANCE = new HexThreadIdPatternConverter();
 
   /**

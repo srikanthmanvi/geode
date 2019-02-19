@@ -20,7 +20,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.TransactionException;
 import org.apache.geode.cache.operations.KeySetOperationContext;
@@ -42,7 +41,6 @@ import org.apache.geode.security.ResourcePermission.Resource;
 
 public class KeySet extends BaseCommand {
 
-  @Immutable
   private static final KeySet singleton = new KeySet();
 
   public static Command getCommand() {

@@ -19,7 +19,6 @@ import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsFactory;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.StatisticsTypeFactory;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.cache.CachePerfStats;
 import org.apache.geode.internal.statistics.StatisticsTypeFactoryImpl;
 
@@ -28,7 +27,6 @@ import org.apache.geode.internal.statistics.StatisticsTypeFactoryImpl;
  */
 public class IndexStats {
 
-  @Immutable
   private static final StatisticsType type;
 
   private static final int numKeysId;

@@ -21,8 +21,6 @@ import java.nio.channels.SocketChannel;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.internal.Assert;
 import org.apache.geode.internal.DSCODE;
 import org.apache.geode.internal.HeapDataOutputStream;
@@ -51,7 +49,6 @@ public class Part {
    * @since GemFire 5.1
    */
   private static final byte EMPTY_BYTEARRAY_CODE = 2;
-  @Immutable
   private static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
 
   /**
@@ -175,7 +172,6 @@ public class Part {
     return CacheServerHelper.fromUTF((byte[]) this.part);
   }
 
-  @Immutable
   private static final byte[][] BYTES = new byte[256][1];
   private static final int BYTES_OFFSET = -1 * Byte.MIN_VALUE;
   static {
@@ -218,7 +214,6 @@ public class Part {
         | (((bytes[offset + 2]) << 8) & 0x0000FF00) | ((bytes[offset + 3]) & 0x000000FF);
   }
 
-  @MakeNotStatic
   private static final Map<Integer, byte[]> CACHED_INTS = new ConcurrentHashMap<Integer, byte[]>();
 
   public void setInt(int v) {

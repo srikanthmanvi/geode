@@ -19,8 +19,6 @@ import org.apache.logging.log4j.message.Message;
 import org.apache.logging.log4j.message.MessageFactory;
 import org.apache.logging.log4j.message.ParameterizedMessage;
 
-import org.apache.geode.annotations.Immutable;
-
 /**
  * Enables use of <code>{}</code> parameter markers in message strings.
  * <p/>
@@ -41,7 +39,6 @@ public class GemFireParameterizedMessageFactory extends AbstractMessageFactory {
   /**
    * Instance of StringFormatterMessageFactory.
    */
-  @Immutable
   public static final GemFireParameterizedMessageFactory INSTANCE =
       new GemFireParameterizedMessageFactory();
 

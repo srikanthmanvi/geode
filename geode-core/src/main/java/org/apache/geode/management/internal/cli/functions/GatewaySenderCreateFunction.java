@@ -18,7 +18,6 @@ import java.util.List;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.execute.FunctionContext;
 import org.apache.geode.cache.execute.ResultSender;
@@ -40,7 +39,6 @@ public class GatewaySenderCreateFunction implements InternalFunction {
 
   private static final String ID = GatewaySenderCreateFunction.class.getName();
 
-  @Immutable
   public static final GatewaySenderCreateFunction INSTANCE = new GatewaySenderCreateFunction();
 
 

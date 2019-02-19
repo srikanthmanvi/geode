@@ -18,7 +18,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.management.internal.cli.CommandResponseWriter;
 import org.apache.geode.management.internal.cli.GfshParser;
 import org.apache.geode.management.internal.cli.shell.Gfsh;
@@ -33,7 +32,6 @@ public class CommandExecutionContext {
   private static final ThreadLocal<Boolean> FROM_SHELL = new ThreadLocal<>();
   private static final ThreadLocal<List<String>> SHELL_FILEPATH = new ThreadLocal<>();
 
-  @MakeNotStatic
   private static final WrapperThreadLocal<CommandResponseWriter> WRITER_WRAPPER =
       new WrapperThreadLocal<CommandResponseWriter>() {
         @Override

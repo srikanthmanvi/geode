@@ -17,7 +17,6 @@ package org.apache.geode.cache.server;
 import java.io.IOException;
 import java.util.Set;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.ClientSession;
 import org.apache.geode.cache.InterestRegistrationListener;
 import org.apache.geode.cache.client.Pool;
@@ -96,7 +95,6 @@ public interface CacheServer {
    * @since GemFire 5.7
    * @deprecated as of 7.0 use the groups gemfire property
    */
-  @Immutable
   String[] DEFAULT_GROUPS = new String[0];
 
   /**
@@ -106,7 +104,6 @@ public interface CacheServer {
    * @since GemFire 5.7
    *
    */
-  @Immutable
   ServerLoadProbe DEFAULT_LOAD_PROBE = new ConnectionCountProbe();
 
   /**

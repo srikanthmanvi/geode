@@ -61,7 +61,6 @@ import org.apache.geode.CancelException;
 import org.apache.geode.DataSerializer;
 import org.apache.geode.SystemFailure;
 import org.apache.geode.ToDataException;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.RegionDestroyedException;
 import org.apache.geode.cache.client.internal.PoolImpl;
@@ -325,10 +324,8 @@ public class AcceptorImpl implements Acceptor, Runnable, CommBufferPool {
    */
   private long acceptorId;
 
-  @MakeNotStatic
   private static boolean isAuthenticationRequired;
 
-  @MakeNotStatic
   private static boolean isPostAuthzCallbackPresent;
 
   private boolean isGatewayReceiver;
@@ -801,7 +798,6 @@ public class AcceptorImpl implements Acceptor, Runnable, CommBufferPool {
   /**
    * break any potential circularity in {@link #loadEmergencyClasses()}
    */
-  @MakeNotStatic
   private static volatile boolean emergencyClassesLoaded = false;
 
   /**

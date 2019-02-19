@@ -27,9 +27,7 @@ import java.util.Set;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.annotations.VisibleForTesting;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.DiskAccessException;
 import org.apache.geode.cache.RegionDestroyedException;
 import org.apache.geode.cache.persistence.ConflictingPersistentDataException;
@@ -55,10 +53,8 @@ import org.apache.geode.internal.util.TransformUtils;
 public class PersistenceAdvisorImpl implements InternalPersistenceAdvisor {
 
   private static final Logger logger = LogService.getLogger();
-  @Immutable
   private static final PersistenceAdvisorObserver DEFAULT_PERSISTENCE_ADVISOR_OBSERVER = s -> {
   };
-  @MutableForTesting
   private static PersistenceAdvisorObserver persistenceAdvisorObserver =
       DEFAULT_PERSISTENCE_ADVISOR_OBSERVER;
 

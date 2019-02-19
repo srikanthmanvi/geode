@@ -30,7 +30,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.Immutable;
 
 /**
  * Encapsulates native C/C++ calls via JNA. To obtain an instance of implementation for a platform,
@@ -48,7 +47,6 @@ public abstract class NativeCalls {
    * Note: this variable is deliberately not final so that other clients can plug in their own
    * native implementations of NativeCalls.
    */
-  @Immutable
   protected static final NativeCalls instance;
 
   static {

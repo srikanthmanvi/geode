@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.DurableClientAttributes;
 import org.apache.geode.distributed.internal.ClusterDistributionManager;
 
@@ -30,10 +29,8 @@ import org.apache.geode.distributed.internal.ClusterDistributionManager;
  */
 public class MemberAttributes {
 
-  @Immutable
   public static final MemberAttributes INVALID =
       new MemberAttributes(-1, -1, -1, -1, null, null, null);
-  @Immutable
   public static final MemberAttributes DEFAULT =
       new MemberAttributes(-1, -1, ClusterDistributionManager.NORMAL_DM_TYPE, -1, null, null, null);
 

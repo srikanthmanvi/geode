@@ -20,7 +20,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.cache.persistence.PersistentMemberID;
 
 /**
@@ -31,7 +30,6 @@ public class TransformUtils {
   /**
    * Transforms PersistentMemberIDs to a user friendly log entry.
    */
-  @Immutable
   public static final Transformer<Map.Entry<PersistentMemberID, Set<Integer>>, String> persistentMemberEntryToLogEntryTransformer =
       new Transformer<Map.Entry<PersistentMemberID, Set<Integer>>, String>() {
         @Override
@@ -55,7 +53,6 @@ public class TransformUtils {
   /**
    * Transforms PersistentMemberIDs to a user friendly log entry.
    */
-  @Immutable
   public static final Transformer<PersistentMemberID, String> persistentMemberIdToLogEntryTransformer =
       new Transformer<PersistentMemberID, String>() {
         @Override
@@ -97,7 +94,6 @@ public class TransformUtils {
   /**
    * This is a simple file to file name transformer.
    */
-  @Immutable
   public static final Transformer<File, String> fileNameTransformer =
       new Transformer<File, String>() {
         @Override

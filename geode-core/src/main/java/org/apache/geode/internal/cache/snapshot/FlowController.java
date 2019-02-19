@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.RegionEvent;
 import org.apache.geode.cache.RegionMembershipListener;
@@ -85,7 +84,6 @@ public class FlowController {
   }
 
   /** the singleton */
-  @MakeNotStatic
   private static final FlowController instance = new FlowController();
 
   public static FlowController getInstance() {

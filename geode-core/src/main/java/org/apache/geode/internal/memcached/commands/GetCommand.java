@@ -22,7 +22,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.apache.geode.annotations.internal.MakeImmutable;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.Region;
 import org.apache.geode.internal.memcached.KeyWrapper;
@@ -53,9 +52,7 @@ public class GetCommand extends AbstractCommand {
   private static final String VALUE = "VALUE";
   private static final String W_SPACE = " ";
   private static final String RN = "\r\n";
-  @MakeImmutable
   private static final ByteBuffer RN_BUF = asciiCharset.encode(RN);
-  @MakeImmutable
   private static final ByteBuffer END_BUF = asciiCharset.encode(Reply.END.toString());
 
   /**

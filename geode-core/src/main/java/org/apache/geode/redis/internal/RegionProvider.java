@@ -27,7 +27,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.CacheTransactionManager;
 import org.apache.geode.cache.Region;
@@ -85,7 +84,6 @@ public class RegionProvider implements Closeable {
   private final ConcurrentMap<ByteArrayWrapper, ScheduledFuture<?>> expirationsMap;
   private final ScheduledExecutorService expirationExecutor;
   private final RegionShortcut defaultRegionType;
-  @Immutable
   private static final CreateRegionCommand createRegionCmd = new CreateRegionCommand();
   private final ConcurrentHashMap<String, Lock> locks;
 

@@ -56,9 +56,6 @@ import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.SystemConnectException;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeNotStatic;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.CacheClosedException;
 import org.apache.geode.cache.CacheFactory;
 import org.apache.geode.cache.CacheXmlException;
@@ -144,17 +141,14 @@ public class InternalDistributedSystem extends DistributedSystem
   /**
    * Feature flag to enable multiple caches within a JVM.
    */
-  @MutableForTesting
   public static boolean ALLOW_MULTIPLE_SYSTEMS =
       Boolean.getBoolean(DistributionConfig.GEMFIRE_PREFIX + "ALLOW_MULTIPLE_SYSTEMS");
 
   /**
    * If auto-reconnect is going on this will hold a reference to it
    */
-  @MakeNotStatic
   public static volatile DistributedSystem systemAttemptingReconnect;
 
-  @Immutable
   public static final CreationStackGenerator DEFAULT_CREATION_STACK_GENERATOR =
       new CreationStackGenerator() {
         @Override
@@ -164,7 +158,6 @@ public class InternalDistributedSystem extends DistributedSystem
       };
 
   // the following is overridden from DistributedTestCase to fix #51058
-  @MutableForTesting
   public static final AtomicReference<CreationStackGenerator> TEST_CREATION_STACK_GENERATOR =
       new AtomicReference<>(DEFAULT_CREATION_STACK_GENERATOR);
 
@@ -319,13 +312,11 @@ public class InternalDistributedSystem extends DistributedSystem
    * Set of listeners that are invoked whenever a connection is created to the distributed system
    */
   // needs to be ordered
-  @MakeNotStatic
   private static final Set<ConnectListener> connectListeners = new LinkedHashSet();
 
   /**
    * auto-reconnect listeners
    */
-  @MakeNotStatic
   private static final List<ReconnectListener> reconnectListeners = new ArrayList<>();
 
   /**
@@ -1478,7 +1469,6 @@ public class InternalDistributedSystem extends DistributedSystem
   /**
    * break any potential circularity in {@link #loadEmergencyClasses()}
    */
-  @MakeNotStatic
   private static volatile boolean emergencyClassesLoaded = false;
 
   /**
@@ -2217,7 +2207,6 @@ public class InternalDistributedSystem extends DistributedSystem
    * Installs a shutdown hook to ensure that we are disconnected if an application VM shuts down
    * without first calling disconnect itself.
    */
-  @Immutable
   public static final Thread shutdownHook;
 
   static {
@@ -2312,7 +2301,6 @@ public class InternalDistributedSystem extends DistributedSystem
   /**
    * Integer representing number of tries already made to reconnect and that failed.
    */
-  @MakeNotStatic
   private static volatile int reconnectAttemptCounter = 0;
 
   /**

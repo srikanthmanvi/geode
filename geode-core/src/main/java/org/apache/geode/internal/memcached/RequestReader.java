@@ -24,8 +24,6 @@ import java.nio.charset.CharacterCodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MakeImmutable;
 import org.apache.geode.internal.memcached.commands.AbstractCommand;
 import org.apache.geode.internal.memcached.commands.ClientError;
 import org.apache.geode.memcached.GemFireMemcachedServer.Protocol;
@@ -38,7 +36,6 @@ import org.apache.geode.memcached.GemFireMemcachedServer.Protocol;
  */
 public class RequestReader {
 
-  @Immutable
   private static final Charset charsetASCII = Charset.forName("US-ASCII");
 
   private static final ThreadLocal<CharsetDecoder> asciiDecoder =
@@ -246,7 +243,6 @@ public class RequestReader {
     response.clear();
   }
 
-  @MakeImmutable
   private static byte[] cleanByteArray;
 
   private byte[] getCleanByteArray() {

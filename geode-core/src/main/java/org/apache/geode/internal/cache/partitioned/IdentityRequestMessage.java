@@ -23,7 +23,6 @@ import java.util.Set;
 import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.distributed.internal.ClusterDistributionManager;
 import org.apache.geode.distributed.internal.DistributionManager;
 import org.apache.geode.distributed.internal.DistributionMessage;
@@ -51,7 +50,6 @@ public class IdentityRequestMessage extends DistributionMessage implements Messa
   /**
    * This is the keeper of the latest PartitionedRegion Identity on a per VM basis
    */
-  @MakeNotStatic
   private static int latestId = UNINITIALIZED;
 
   public static synchronized void setLatestId(int newlatest) {

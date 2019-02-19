@@ -20,7 +20,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.apache.geode.InternalGemFireError;
-import org.apache.geode.annotations.internal.MakeImmutable;
 import org.apache.geode.internal.Version;
 import org.apache.geode.internal.cache.tier.Command;
 import org.apache.geode.internal.cache.tier.MessageType;
@@ -112,7 +111,6 @@ import org.apache.geode.internal.cache.tier.sockets.command.UpdateClientNotifica
 
 public class CommandInitializer {
 
-  @MakeImmutable
   static Map<Version, Map<Integer, Command>> ALL_COMMANDS;
 
   static {

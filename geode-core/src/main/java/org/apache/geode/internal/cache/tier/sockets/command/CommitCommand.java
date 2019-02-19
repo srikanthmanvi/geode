@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 import org.apache.geode.CancelException;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.TransactionInDoubtException;
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.distributed.internal.membership.InternalDistributedMember;
@@ -41,7 +40,6 @@ import org.apache.geode.internal.security.SecurityService;
  */
 public class CommitCommand extends BaseCommand {
 
-  @Immutable
   private static final CommitCommand singleton = new CommitCommand();
 
   public static Command getCommand() {

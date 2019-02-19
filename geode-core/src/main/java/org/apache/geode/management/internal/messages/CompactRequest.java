@@ -28,7 +28,6 @@ import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.CancelException;
 import org.apache.geode.DataSerializer;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.persistence.PersistentID;
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.distributed.internal.ClusterDistributionManager;
@@ -55,7 +54,6 @@ public class CompactRequest extends AdminRequest {
 
   private String diskStoreName;
 
-  @MakeNotStatic
   private static String notExecutedMembers;
 
   public static Map<DistributedMember, PersistentID> send(DistributionManager dm,

@@ -21,7 +21,6 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.Properties;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.internal.tcpserver.LocatorCancelException;
 import org.apache.geode.distributed.internal.tcpserver.TcpClient;
 import org.apache.geode.internal.DataSerializableFixedID;
@@ -56,7 +55,6 @@ public class JmxManagerLocatorRequest implements DataSerializableFixedID {
     return "JmxManagerLocatorRequest";
   }
 
-  @Immutable
   private static final JmxManagerLocatorRequest SINGLETON = new JmxManagerLocatorRequest();
 
   /**

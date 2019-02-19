@@ -16,7 +16,6 @@ package org.apache.geode.management.internal.cli.functions;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.execute.FunctionContext;
 import org.apache.geode.internal.cache.xmlcache.CacheXml;
 import org.apache.geode.internal.logging.LogService;
@@ -35,7 +34,6 @@ public class FetchRegionAttributesFunction extends CliFunction<String> {
 
   private static final String ID = FetchRegionAttributesFunction.class.getName();
 
-  @Immutable
   public static final FetchRegionAttributesFunction INSTANCE = new FetchRegionAttributesFunction();
 
   @Override

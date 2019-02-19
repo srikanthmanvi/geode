@@ -14,8 +14,6 @@
  */
 package org.apache.geode.internal.cache.partitioned;
 
-import org.apache.geode.annotations.Immutable;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.query.internal.Support;
 
 /**
@@ -31,14 +29,12 @@ public class PartitionedRegionObserverHolder {
   /**
    * The default 'do-nothing' bridge observer *
    */
-  @Immutable
   private static final PartitionedRegionObserver NO_OBSERVER =
       new PartitionedRegionObserverAdapter();
 
   /**
    * The current observer which will be notified of all query events.
    */
-  @MutableForTesting
   private static PartitionedRegionObserver _instance = NO_OBSERVER;
 
   /**

@@ -35,7 +35,6 @@ import org.apache.geode.DeltaSerializationException;
 import org.apache.geode.InternalGemFireError;
 import org.apache.geode.InvalidDeltaException;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.CacheException;
 import org.apache.geode.cache.CacheWriter;
 import org.apache.geode.cache.CacheWriterException;
@@ -108,9 +107,7 @@ import org.apache.geode.internal.offheap.annotations.Unretained;
 public class BucketRegion extends DistributedRegion implements Bucket {
   private static final Logger logger = LogService.getLogger();
 
-  @Immutable
   public static final RawValue NULLVALUE = new RawValue(null);
-  @Immutable
   public static final RawValue REQUIRES_ENTRY_LOCK = new RawValue(null);
   /**
    * A special value for the bucket size indicating that this bucket has been destroyed.

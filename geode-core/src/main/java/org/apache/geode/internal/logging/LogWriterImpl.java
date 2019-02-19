@@ -28,7 +28,6 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 
 import org.apache.geode.LogWriter;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.i18n.LogWriterI18n;
 import org.apache.geode.i18n.StringId;
 import org.apache.geode.internal.Assert;
@@ -94,7 +93,6 @@ public abstract class LogWriterImpl implements InternalLogWriter {
   /**
    * A listener which can be registered to be informed of startup events
    */
-  @MakeNotStatic
   private static volatile StartupStatusListener startupListener;
 
   private final DateFormat timeFormatter;

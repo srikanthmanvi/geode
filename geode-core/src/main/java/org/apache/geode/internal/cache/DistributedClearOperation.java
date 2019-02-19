@@ -21,7 +21,6 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.geode.DataSerializer;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.CacheEvent;
 import org.apache.geode.cache.EntryNotFoundException;
 import org.apache.geode.distributed.internal.ClusterDistributionManager;
@@ -43,7 +42,6 @@ public class DistributedClearOperation extends DistributedCacheOperation {
   /**
    * A map of all the regions that are currently locked for a clear in this VM
    */
-  @MakeNotStatic
   private static final ConcurrentHashMap<LockKey, DistributedRegion> lockedRegions =
       new ConcurrentHashMap<LockKey, DistributedRegion>();
 

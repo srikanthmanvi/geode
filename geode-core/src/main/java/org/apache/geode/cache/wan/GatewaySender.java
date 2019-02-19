@@ -16,7 +16,6 @@ package org.apache.geode.cache.wan;
 
 import java.util.List;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.internal.DistributionConfig;
 
 /**
@@ -101,7 +100,6 @@ public interface GatewaySender {
 
   boolean DEFAULT_FORWARD_EXPIRATION_DESTROY = false;
 
-  @Immutable
   OrderPolicy DEFAULT_ORDER_POLICY = OrderPolicy.KEY;
   /**
    * The default maximum amount of memory (MB) to allow in the queue before overflowing entries to

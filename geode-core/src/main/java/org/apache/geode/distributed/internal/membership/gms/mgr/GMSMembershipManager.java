@@ -45,7 +45,6 @@ import org.apache.geode.InternalGemFireError;
 import org.apache.geode.SystemConnectException;
 import org.apache.geode.SystemFailure;
 import org.apache.geode.ToDataException;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.distributed.DistributedSystem;
 import org.apache.geode.distributed.DistributedSystemDisconnectedException;
@@ -1417,14 +1416,12 @@ public class GMSMembershipManager implements MembershipManager, Manager {
    * @see SystemFailure#loadEmergencyClasses() /** break any potential circularity in
    *      {@link #loadEmergencyClasses()}
    */
-  @MakeNotStatic
   private static volatile boolean emergencyClassesLoaded = false;
 
   /**
    * inhibits logging of ForcedDisconnectException to keep dunit logs clean while testing this
    * feature
    */
-  @MakeNotStatic
   private static volatile boolean inhibitForceDisconnectLogging;
 
   /**

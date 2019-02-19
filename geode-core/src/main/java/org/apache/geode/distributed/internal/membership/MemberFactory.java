@@ -16,7 +16,6 @@ package org.apache.geode.distributed.internal.membership;
 
 import java.net.InetAddress;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.internal.DMStats;
 import org.apache.geode.distributed.internal.InternalDistributedSystem;
 import org.apache.geode.distributed.internal.LocatorStats;
@@ -33,7 +32,6 @@ import org.apache.geode.internal.security.SecurityService;
  */
 public class MemberFactory {
 
-  @Immutable
   private static final MemberServices services = new GMSMemberFactory();
 
   /**

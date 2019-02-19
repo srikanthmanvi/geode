@@ -19,7 +19,6 @@ import java.nio.ByteBuffer;
 import java.util.IdentityHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.distributed.internal.DMStats;
 import org.apache.geode.internal.Assert;
 
@@ -37,7 +36,6 @@ public class Buffers {
   /**
    * A list of soft references to byte buffers.
    */
-  @MakeNotStatic
   private static final ConcurrentLinkedQueue<BBSoftReference> bufferQueue =
       new ConcurrentLinkedQueue<>();
 

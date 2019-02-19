@@ -18,7 +18,6 @@ package org.apache.geode.internal.statistics.platform;
 import org.apache.geode.StatisticDescriptor;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.StatisticsTypeFactory;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.Assert;
 import org.apache.geode.internal.statistics.StatisticsTypeFactoryImpl;
 
@@ -66,7 +65,6 @@ public class OSXSystemStats {
   // private static final int loadAverage15DOUBLE = 1;
   // private static final int loadAverage5DOUBLE = 2;
 
-  @Immutable
   private static final StatisticsType myType;
 
   private static void checkOffset(String name, int offset) {

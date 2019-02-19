@@ -25,7 +25,6 @@ import java.util.Set;
 
 import org.apache.logging.log4j.Logger;
 
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.CacheException;
 import org.apache.geode.cache.EntryDestroyedException;
 import org.apache.geode.cache.Region;
@@ -87,14 +86,12 @@ import org.apache.geode.pdx.internal.PdxString;
 public class CompactRangeIndex extends AbstractIndex {
   private static final Logger logger = LogService.getLogger();
 
-  @MutableForTesting
   private static TestHook testHook;
 
   protected ThreadLocal<OldKeyValuePair> oldKeyValue;
 
   private IndexStore indexStore;
 
-  @MutableForTesting
   static boolean TEST_ALWAYS_UPDATE_IN_PROGRESS = false;
 
   public CompactRangeIndex(InternalCache cache, String indexName, Region region, String fromClause,

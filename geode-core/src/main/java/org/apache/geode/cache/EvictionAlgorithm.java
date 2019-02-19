@@ -18,8 +18,6 @@ import java.io.Serializable;
 
 import javax.print.attribute.EnumSyntax;
 
-import org.apache.geode.annotations.Immutable;
-
 /**
  * The algorithm used to determine when to perform an {@link org.apache.geode.cache.EvictionAction}
  *
@@ -27,34 +25,29 @@ import org.apache.geode.annotations.Immutable;
  * @see org.apache.geode.cache.EvictionAction
  * @see org.apache.geode.internal.cache.EvictionAttributesImpl
  */
-@Immutable
 public final class EvictionAlgorithm extends EnumSyntax implements Serializable {
   private static final long serialVersionUID = 5778669432033106789L;
 
   /**
    * The canonical EvictionAction that represents no eviction action
    */
-  @Immutable
   public static final EvictionAlgorithm NONE = new EvictionAlgorithm(0);
 
   /**
    * An algorithm that considers the number of Entries in the Region before invoking its
    * {@link EvictionAction}
    */
-  @Immutable
   public static final EvictionAlgorithm LRU_ENTRY = new EvictionAlgorithm(1);
 
   /**
    * An algorithm that considers the JVM heap size before invoking its {@link EvictionAction}
    */
-  @Immutable
   public static final EvictionAlgorithm LRU_HEAP = new EvictionAlgorithm(2);
 
   /**
    * An algorithm that considers the amount of bytes consumed by the Region before invoking its
    * {@link EvictionAction}
    */
-  @Immutable
   public static final EvictionAlgorithm LRU_MEMORY = new EvictionAlgorithm(3);
 
   /**
@@ -63,7 +56,6 @@ public final class EvictionAlgorithm extends EnumSyntax implements Serializable 
    *
    * @deprecated For internal use only.
    */
-  @Immutable
   public static final EvictionAlgorithm LIFO_ENTRY = new EvictionAlgorithm(4);
 
   /**
@@ -72,7 +64,6 @@ public final class EvictionAlgorithm extends EnumSyntax implements Serializable 
    *
    * @deprecated For internal use only.
    */
-  @Immutable
   public static final EvictionAlgorithm LIFO_MEMORY = new EvictionAlgorithm(5);
 
   private EvictionAlgorithm(int val) {
@@ -87,7 +78,6 @@ public final class EvictionAlgorithm extends EnumSyntax implements Serializable 
     return stringTable;
   }
 
-  @Immutable
   private static final EvictionAlgorithm[] enumValueTable =
       {NONE, LRU_ENTRY, LRU_HEAP, LRU_MEMORY, LIFO_ENTRY, LIFO_MEMORY,};
 

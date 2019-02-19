@@ -24,7 +24,6 @@ import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.InternalGemFireException;
 import org.apache.geode.InvalidVersionException;
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.CacheEvent;
 import org.apache.geode.cache.CacheWriterException;
 import org.apache.geode.cache.DataPolicy;
@@ -48,7 +47,6 @@ import org.apache.geode.internal.logging.LogService;
 public abstract class AbstractUpdateOperation extends DistributedCacheOperation {
   private static final Logger logger = LogService.getLogger();
 
-  @MutableForTesting
   public static volatile boolean test_InvalidVersion;
 
   @edu.umd.cs.findbugs.annotations.SuppressWarnings(

@@ -22,7 +22,6 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.AttributesFactory;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.CacheWriterException;
@@ -78,7 +77,6 @@ public class ClientCacheCreation extends CacheCreation implements ClientCache {
     super(forParsing);
   }
 
-  @Immutable
   private static final RegionAttributes clientDefaults = createClientDefaults();
 
   private static RegionAttributes createClientDefaults() {

@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.geode.CancelException;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.EntryNotFoundException;
 import org.apache.geode.cache.RegionDestroyedException;
 import org.apache.geode.cache.operations.DestroyOperationContext;
@@ -56,7 +55,6 @@ import org.apache.geode.pdx.internal.PeerTypeRegistration;
 
 public class GatewayReceiverCommand extends BaseCommand {
 
-  @Immutable
   private static final GatewayReceiverCommand singleton = new GatewayReceiverCommand();
 
   public static Command getCommand() {

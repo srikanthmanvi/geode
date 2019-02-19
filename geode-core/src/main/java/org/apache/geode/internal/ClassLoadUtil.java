@@ -19,11 +19,8 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.geode.annotations.internal.MakeImmutable;
-
 public class ClassLoadUtil {
 
-  @MakeImmutable
   private static final Map<String, Class> PRIMITIVE_TYPES = primitiveTypes();
 
   private static Map primitiveTypes() {

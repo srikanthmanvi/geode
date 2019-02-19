@@ -42,7 +42,6 @@ import java.util.zip.Inflater;
 
 import org.apache.commons.lang3.ArrayUtils;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.Region;
 import org.apache.geode.cache.execute.Execution;
@@ -77,7 +76,6 @@ import org.apache.geode.management.internal.configuration.domain.DeclarableTypeI
  * @since GemFire 7.0
  */
 public class CliUtil {
-  @Immutable
   public static final FileFilter JAR_FILE_FILTER = new CustomFileFilter(".jar");
 
   public static String cliDependenciesExist(boolean includeGfshDependencies) {

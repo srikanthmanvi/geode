@@ -30,7 +30,6 @@ import java.util.Set;
 
 import it.unimi.dsi.fastutil.HashCommon;
 
-import org.apache.geode.annotations.internal.MutableForTesting;
 import org.apache.geode.cache.query.TypeMismatchException;
 import org.apache.geode.cache.query.internal.parse.OQLLexerTokenTypes;
 import org.apache.geode.cache.query.internal.types.TypeUtils;
@@ -108,7 +107,6 @@ public class HashIndexSet implements Set {
    */
   protected static final Object REMOVED = new Object();
 
-  @MutableForTesting
   static boolean TEST_ALWAYS_REHASH = false;
 
   /**

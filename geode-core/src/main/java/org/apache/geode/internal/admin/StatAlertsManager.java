@@ -30,7 +30,6 @@ import org.apache.geode.StatisticDescriptor;
 import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsType;
 import org.apache.geode.admin.jmx.internal.StatAlertsAggregator;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.distributed.internal.ClusterDistributionManager;
 import org.apache.geode.distributed.internal.InternalDistributedSystem;
 import org.apache.geode.internal.SystemTimer;
@@ -62,7 +61,6 @@ public class StatAlertsManager {
    *
    * Guarded by StatAlertsManager.class
    */
-  @MakeNotStatic
   private static StatAlertsManager alertManager;
 
   /**
@@ -73,7 +71,6 @@ public class StatAlertsManager {
   /**
    * Guarded by this.alertDefinitionsMap
    */
-  @MakeNotStatic
   protected final HashMap alertDefinitionsMap = new HashMap();
 
   /**

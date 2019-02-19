@@ -22,7 +22,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.client.internal.ExecuteFunctionOp;
 import org.apache.geode.cache.execute.Execution;
 import org.apache.geode.cache.execute.Function;
@@ -42,7 +41,6 @@ import org.apache.geode.internal.security.SecurityService;
 
 public class ExecuteFunction70 extends ExecuteFunction66 {
 
-  @Immutable
   private static final ExecuteFunction70 singleton = new ExecuteFunction70();
 
   public static Command getCommand() {

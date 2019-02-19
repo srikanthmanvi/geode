@@ -38,7 +38,6 @@ import javax.naming.NotContextException;
 import javax.transaction.SystemException;
 
 import org.apache.geode.LogWriter;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.internal.jta.TransactionUtils;
 import org.apache.geode.internal.jta.UserTransactionImpl;
 
@@ -55,7 +54,6 @@ public class ContextImpl implements Context {
 
   private static final String ROOT_CONTEXT_NAME = "ROOT";
   // Naming scheme for the ContextImpl.
-  @Immutable
   private static final NameParser nameParser = new NameParserImpl();
   /*
    * Map of objects registered for this context representing the local context

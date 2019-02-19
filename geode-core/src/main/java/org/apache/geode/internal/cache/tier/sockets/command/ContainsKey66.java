@@ -16,7 +16,6 @@ package org.apache.geode.internal.cache.tier.sockets.command;
 
 import java.io.IOException;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.client.internal.ContainsKeyOp;
 import org.apache.geode.distributed.internal.DistributionStats;
 import org.apache.geode.internal.cache.LocalRegion;
@@ -35,7 +34,6 @@ import org.apache.geode.security.ResourcePermission.Resource;
 
 public class ContainsKey66 extends BaseCommand {
 
-  @Immutable
   private static final ContainsKey66 singleton = new ContainsKey66();
 
   public static Command getCommand() {

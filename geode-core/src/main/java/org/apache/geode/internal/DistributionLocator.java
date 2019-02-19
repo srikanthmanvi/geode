@@ -23,7 +23,6 @@ import java.util.Properties;
 import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.distributed.internal.DistributionConfig;
 import org.apache.geode.distributed.internal.InternalDistributedSystem;
 import org.apache.geode.distributed.internal.InternalLocator;
@@ -74,9 +73,7 @@ public class DistributionLocator {
   }
 
 
-  @MakeNotStatic
   private static boolean shutdown = false;
-  @MakeNotStatic
   private static File lockFile = null;
   private static final File directory = (new File("")).getAbsoluteFile();
 

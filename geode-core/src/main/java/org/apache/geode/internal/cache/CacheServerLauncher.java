@@ -37,7 +37,6 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.geode.LogWriter;
 import org.apache.geode.SystemFailure;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.cache.Cache;
 import org.apache.geode.cache.CacheFactory;
 import org.apache.geode.cache.partition.PartitionRegionHelper;
@@ -69,7 +68,6 @@ import org.apache.geode.internal.util.JavaCommandBuilder;
 public class CacheServerLauncher {
 
   /** Is this VM a dedicated Cache Server? This value is used mainly by the admin API. */
-  @MakeNotStatic("Maybe this should be immutable instead, if this whole JVM is supposed to be a dedicated server?")
   public static boolean isDedicatedCacheServer =
       Boolean.getBoolean(DistributionConfig.GEMFIRE_PREFIX + "isDedicatedServer");
 

@@ -14,7 +14,6 @@
  */
 package org.apache.geode.internal.sequencelog;
 
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.distributed.internal.DistributionConfig;
 import org.apache.geode.distributed.internal.InternalDistributedSystem;
 import org.apache.geode.internal.cache.CachedDeserializable;
@@ -35,7 +34,6 @@ import org.apache.geode.internal.offheap.annotations.Unretained;
  * TODO - I think I need some options to choose to deserialize a key to record states.
  */
 public class EntryLogger {
-  @Immutable
   private static final SequenceLogger GRAPH_LOGGER = SequenceLoggerImpl.getInstance();
   private static final ThreadLocal<String> SOURCE = new ThreadLocal<String>();
   private static final ThreadLocal<String> SOURCE_TYPE = new ThreadLocal<String>();

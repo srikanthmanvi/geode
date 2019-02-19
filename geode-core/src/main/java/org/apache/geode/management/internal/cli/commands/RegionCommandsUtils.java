@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import org.apache.geode.annotations.internal.MakeImmutable;
 import org.apache.geode.cache.RegionShortcut;
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.internal.cache.InternalCache;
@@ -31,7 +30,6 @@ import org.apache.geode.management.internal.cli.i18n.CliStrings;
 
 public class RegionCommandsUtils {
 
-  @MakeImmutable
   public static final Set<RegionShortcut> PERSISTENT_OVERFLOW_SHORTCUTS = new TreeSet<>();
 
   static {

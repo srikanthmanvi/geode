@@ -31,7 +31,6 @@ import org.apache.geode.GemFireException;
 import org.apache.geode.StatisticDescriptor;
 import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsType;
-import org.apache.geode.annotations.internal.MakeNotStatic;
 import org.apache.geode.internal.io.RollingFileHandler;
 import org.apache.geode.internal.logging.LogService;
 import org.apache.geode.internal.logging.log4j.LogMarker;
@@ -57,7 +56,6 @@ public class SampleCollector {
    * Singleton instance of SampleCollector set during initialization. This field simply points to
    * the latest initialized instance.
    */
-  @MakeNotStatic
   private static SampleCollector instance;
 
   /**

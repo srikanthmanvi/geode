@@ -25,7 +25,6 @@ import java.util.Set;
 
 import org.apache.geode.DataSerializable;
 import org.apache.geode.DataSerializer;
-import org.apache.geode.annotations.Immutable;
 import org.apache.geode.cache.CacheCallback;
 import org.apache.geode.cache.CacheListener;
 import org.apache.geode.cache.CacheLoader;
@@ -235,7 +234,6 @@ public class RemoteRegionAttributes implements RegionAttributes, DataSerializabl
     }
   }
 
-  @Immutable
   private static final CacheListener[] EMPTY_LISTENERS = new CacheListener[0];
 
   @Override
