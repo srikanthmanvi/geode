@@ -26,8 +26,6 @@ import org.apache.logging.log4j.Logger;
 import org.apache.geode.StatisticDescriptor;
 import org.apache.geode.Statistics;
 import org.apache.geode.StatisticsType;
-import org.apache.geode.annotations.internal.MutableForTesting;
-import org.apache.geode.internal.concurrent.Atomics;
 import org.apache.geode.internal.logging.LogService;
 import org.apache.geode.internal.util.concurrent.CopyOnWriteHashMap;
 
