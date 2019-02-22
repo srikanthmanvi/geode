@@ -773,8 +773,6 @@ public class Connection implements Runnable {
     // we do the close in a background thread because the operation may hang if
     // there is a problem with the network. See bug #46659
 
-    releaseInputBuffer();
-
     // if simulating sickness, sockets must be closed in-line so that tests know
     // that the vm is sick when the beSick operation completes
     if (beingSickForTests) {
@@ -1442,6 +1440,11 @@ public class Connection implements Runnable {
         }
         // make sure our socket is closed
         asyncClose(false);
+        if (!this.isReceiver) {
+          // receivers release the input buffer when exiting run(). Senders use the
+          // inputBuffer for reading direct-reply responses
+          releaseInputBuffer();
+        }
         lengthSet = false;
       } // synchronized
 
@@ -1579,7 +1582,14 @@ public class Connection implements Runnable {
         }
         asyncClose(false);
         this.owner.removeAndCloseThreadOwnedSockets();
+      } else {
+        if (getConduit().useSSL()) {
+          ByteBuffer buffer = ioFilter.getUnwrappedBuffer(inputBuffer);
+          buffer.position(0).limit(0);
+        }
       }
+      releaseInputBuffer();
+
       // make sure that if the reader thread exits we notify a thread waiting
       // for the handshake.
       // see bug 37524 for an example of listeners hung in waitForHandshake
@@ -2821,7 +2831,7 @@ public class Connection implements Runnable {
     DMStats stats = owner.getConduit().getStats();
     final Version version = getRemoteVersion();
     try {
-      msgReader = new MsgReader(this, ioFilter, getInputBuffer(), version);
+      msgReader = new MsgReader(this, ioFilter, version);
 
       Header header = msgReader.readHeader();
 
@@ -2895,6 +2905,9 @@ public class Connection implements Runnable {
         logger.info("Finished waiting for reply from {}",
             getRemoteAddress());
         this.ackTimedOut = false;
+      }
+      if (msgReader != null) {
+        msgReader.close();
       }
     }
     synchronized (stateLock) {
