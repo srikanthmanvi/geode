@@ -28,6 +28,7 @@ import java.util.concurrent.ConcurrentMap;
 
 import org.apache.geode.connectors.jdbc.JdbcConnectorException;
 import org.apache.geode.connectors.jdbc.internal.configuration.RegionMapping;
+import org.apache.geode.internal.util.JavaWorkarounds;
 
 /**
  * Given a tableName this manager will determine which column should correspond to the Geode Region
@@ -44,7 +45,7 @@ public class TableMetaDataManager {
 
   public TableMetaDataView getTableMetaDataView(Connection connection,
       RegionMapping regionMapping) {
-    return tableToMetaDataMap.computeIfAbsent(computeTableName(regionMapping),
+    return JavaWorkarounds.computeIfAbsent(tableToMetaDataMap, computeTableName(regionMapping),
         k -> computeTableMetaDataView(connection, k, regionMapping));
   }
 
