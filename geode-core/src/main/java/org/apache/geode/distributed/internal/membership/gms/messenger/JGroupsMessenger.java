@@ -554,7 +554,8 @@ public class JGroupsMessenger implements Messenger {
     gmsMember.setMemberWeight((byte) (services.getConfig().getMemberWeight() & 0xff));
     gmsMember.setNetworkPartitionDetectionEnabled(
         services.getConfig().getDistributionConfig().getEnableNetworkPartitionDetection());
-
+    logger.info("Established local address {} with net-member {}", localAddress,
+        localAddress.getNetMember());
     services.setLocalAddress(localAddress);
   }
 
