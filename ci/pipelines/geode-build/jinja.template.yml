@@ -178,6 +178,10 @@ resources:
     initial_version: 1.9.0
     json_key: ((!concourse-gcp-key))
     key: ((pipeline-prefix))((geode-build-branch))/version
+- name: daily
+  type: time
+  source:
+    interval: 24h
 
 resource_types:
 - name: concourse-metadata-resource
@@ -198,6 +202,8 @@ jobs:
   plan:
   - get: geode-ci
   - aggregate:
+    - get: daily
+      trigger: true
     - get: geode
       trigger: true
     - get: geode-build-version
