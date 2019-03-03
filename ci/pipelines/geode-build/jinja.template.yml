@@ -202,8 +202,6 @@ jobs:
   plan:
   - get: geode-ci
   - aggregate:
-    - get: daily
-      trigger: true
     - get: geode
       trigger: true
     - get: geode-build-version
@@ -338,6 +336,8 @@ jobs:
   plan:
   - get: geode-ci
   - aggregate:
+    - get: daily
+      trigger: true
     - get: geode
       passed:
       {{ all_gating_jobs() | indent(6) }}
@@ -467,6 +467,8 @@ jobs:
   public: true
   plan:
   - do:
+    - get: daily
+      trigger: true
     {{- plan_resource_gets(test) |indent(4) }}
       - put: concourse-metadata-resource
     - aggregate:
